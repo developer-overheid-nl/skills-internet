@@ -51,7 +51,7 @@ De standaarden staan op de
 | DNSSEC | Verplicht (pas-toe-of-leg-uit) | Beveiliging van DNS-naamresolutie tegen manipulatie |
 | HTTPS (TLS 1.2/1.3) | Verplicht (pas-toe-of-leg-uit) | Versleutelde verbinding tussen browser en server |
 | HSTS | Verplicht (pas-toe-of-leg-uit) | Dwingt browsers HTTPS te gebruiken |
-| Security headers | Aanbevolen | CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy |
+| Security headers | Getest door internet.nl (geen Forum status) | CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy |
 | security.txt | Verplicht (pas-toe-of-leg-uit) | Contactinformatie voor beveiligingsonderzoekers (RFC 9116) |
 | RPKI | Verplicht (pas-toe-of-leg-uit) | Route Origin Validation, beschermt BGP-routing |
 
@@ -62,8 +62,8 @@ De standaarden staan op de
 | SPF | Verplicht (pas-toe-of-leg-uit) | Sender Policy Framework, autoriseert verzendende mailservers |
 | DKIM | Verplicht (pas-toe-of-leg-uit) | DomainKeys Identified Mail, digitale handtekening op e-mail |
 | DMARC | Verplicht (pas-toe-of-leg-uit) | Domain-based Message Authentication, bouwt voort op SPF+DKIM |
-| STARTTLS | Verplicht (pas-toe-of-leg-uit) | Versleuteling van SMTP-verkeer |
-| DANE | Verplicht (pas-toe-of-leg-uit) | DNS-based Authentication of Named Entities, koppelt TLS aan DNS |
+| STARTTLS + DANE | Verplicht (pas-toe-of-leg-uit) | Versleuteling van SMTP-verkeer + DNS-gebaseerde certificaatverificatie |
+| MTA-STS | Getest door internet.nl (geen Forum status) | Mail Transfer Agent Strict Transport Security, dwingt TLS af |
 
 ## Repositories
 
@@ -117,4 +117,4 @@ gh api repos/internetstandards/Internet.nl-API-docs/git/trees/main?recursive=1 \
 - [internet.nl/test-site](https://internet.nl/test-site/) - Website testen
 - [internet.nl/test-mail](https://internet.nl/test-mail/) - E-mail testen
 - [Forum Standaardisatie - Open standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
-- [NCSC - ICT-beveiligingsrichtlijnen](https://www.ncsc.nl/onderwerpen/ict-beveiligingsrichtlijnen)
+- [NCSC - Publicaties](https://www.ncsc.nl/documenten)

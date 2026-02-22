@@ -36,10 +36,8 @@ Voor TLS 1.3 zijn alleen deze cipher suites beschikbaar (allemaal goed):
 - SHA-256 of hoger als hash-algoritme
 - Geldige keten naar een vertrouwde root CA
 - Hostnaam in Subject Alternative Name (SAN)
-- Certificate Transparency (CT) logs
-
 Bronnen:
-- [NCSC - Beveilig verbindingen met TLS](https://www.ncsc.nl/documenten/factsheets/2019/juni/01/factsheet-beveilig-verbindingen-met-tls)
+- [NCSC - TLS-aanbevelingen](https://www.ncsc.nl/onderwerpen/verbindingsbeveiliging)
 - [Forum Standaardisatie - TLS](https://www.forumstandaardisatie.nl/open-standaarden/tls)
 
 ## DNSSEC protocol-details
@@ -150,7 +148,8 @@ ns1.example.nl IN  AAAA  2001:db8::10
 ```
 
 Bronnen:
-- [Forum Standaardisatie - IPv6](https://www.forumstandaardisatie.nl/open-standaarden/ipv6-en-dnssec)
+- [Forum Standaardisatie - IPv6](https://www.forumstandaardisatie.nl/open-standaarden/ipv6)
+- [Forum Standaardisatie - DNSSEC](https://www.forumstandaardisatie.nl/open-standaarden/dnssec)
 
 ## HSTS-details
 
@@ -242,7 +241,7 @@ mv security.txt.signed .well-known/security.txt
 
 Bronnen:
 - [Forum Standaardisatie - security.txt](https://www.forumstandaardisatie.nl/open-standaarden/securitytxt)
-- [NCSC - Coordinated Vulnerability Disclosure](https://www.ncsc.nl/onderwerpen/coordinated-vulnerability-disclosure)
+- [NCSC - Coordinated Vulnerability Disclosure](https://www.ncsc.nl/onderwerpen/kwetsbaarheid-melden)
 
 ## RPKI - details
 

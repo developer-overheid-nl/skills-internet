@@ -89,15 +89,14 @@ dig example.nl +trace +dnssec | grep -E '(RRSIG|DS|DNSKEY)'
 server. Internet.nl vereist TLS 1.2 of 1.3 met sterke cipher suites.
 
 **Waarom verplicht:** Beschermt vertrouwelijkheid en integriteit van communicatie.
-Zie ook de [NCSC factsheet over TLS](https://www.ncsc.nl/documenten/factsheets/2019/juni/01/factsheet-beveilig-verbindingen-met-tls).
+Zie ook de [NCSC TLS-aanbevelingen](https://www.ncsc.nl/onderwerpen/verbindingsbeveiliging).
 
 **Wat test internet.nl:**
 - HTTPS bereikbaar en redirect van HTTP naar HTTPS
-- TLS 1.2 of hoger (TLS 1.0/1.1 mag niet)
+- TLS 1.2 of hoger (TLS 1.0/1.1 geeft een phase-out waarschuwing; SSL 2.0/3.0 is een harde fout)
 - Sterke cipher suites (geen RC4, 3DES, NULL, export ciphers)
 - Geldig certificaat (keten, geldigheid, hostnaam)
-- OCSP stapling aanwezig
-- Certificate Transparency (CT)
+- OCSP stapling (getest als niet-scorende melding)
 
 **Testen:**
 
@@ -175,7 +174,7 @@ via een response header.
 
 **Wat test internet.nl:**
 - `Strict-Transport-Security` header aanwezig
-- `max-age` minimaal 10368000 (120 dagen)
+- `max-age` minimaal 31536000 (1 jaar)
 
 **Testen:**
 
@@ -299,7 +298,7 @@ curl -s "https://stat.ripe.net/data/rpki-validation/data.json?resource=${ip}" | 
 
 | Probleem | Oorzaak | Oplossing |
 |----------|---------|-----------|
-| TLS 1.0/1.1 nog actief | Oude serversoftware of configuratie | Schakel TLS 1.0/1.1 expliciet uit in je webserver |
+| TLS 1.0/1.1 nog actief | Oude serversoftware of configuratie | Schakel TLS 1.0/1.1 expliciet uit (geeft phase-out waarschuwing bij internet.nl) |
 | Geen HSTS-header | Header niet geconfigureerd of overschreven | Voeg `Strict-Transport-Security` header toe met `always` directive |
 | CSP blokkeert content | Te strikt beleid | Begin met `Content-Security-Policy-Report-Only` en verfijn |
 | DNSSEC-validatie faalt | DS-record niet bijgewerkt na key rollover | Controleer DS bij registrar, vergelijk met DNSKEY |

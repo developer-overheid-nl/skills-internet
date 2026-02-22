@@ -101,7 +101,9 @@ via een DNS-publicsleutel. De ontvangende mailserver verifieert de handtekening.
 **Wat test internet.nl:**
 - Minimaal 1 geldige DKIM-handtekening op testmail
 - Publieke sleutel beschikbaar via DNS
-- Sleutellengte minimaal 1024-bit (2048-bit aanbevolen)
+
+> **Let op:** Internet.nl controleert alleen of een DKIM-record bestaat; de sleutellengte
+> wordt niet getest. Best practice is minimaal 2048-bit RSA.
 
 **DNS-record formaat:**
 
@@ -199,7 +201,7 @@ dig TXT _dmarc.example.nl +short
 
 **Wat test internet.nl:**
 - MX-servers ondersteunen STARTTLS
-- TLS 1.2 of hoger
+- TLS 1.2 of hoger (TLS 1.0/1.1 geeft een phase-out waarschuwing; SSL 2.0/3.0 is een harde fout)
 - Geldig certificaat
 - Geen terugval naar onversleuteld verkeer
 - MTA-STS beleid (optioneel maar aanbevolen)
