@@ -1,0 +1,49 @@
+publiccodeYmlVersion: '0.2'
+categories:
+  - it-development
+description:
+  nl:
+    features:
+      - 5 skills voor internetstandaarden compliance
+      - Webstandaarden (HTTPS, TLS, DNSSEC, IPv6, RPKI, security headers)
+      - Mailstandaarden (DMARC, DKIM, SPF, STARTTLS, DANE)
+      - Batch API voor bulk compliance scans
+      - Stap-voor-stap implementatiegidsen
+    genericName: Claude Code plugin
+    longDescription: >
+      Claude Code plugin voor het testen en implementeren van moderne
+      internetstandaarden conform internet.nl. Bevat skills voor webstandaarden,
+      mailstandaarden, de batch API en implementatiegidsen uit de toolbox-wiki.
+      Alle standaarden staan op de 'pas-toe-of-leg-uit'-lijst van het Forum
+      Standaardisatie.
+    shortDescription: Claude Code plugin voor internet.nl standaarden
+  en:
+    features:
+      - 5 skills for internet standards compliance
+      - Web standards (HTTPS, TLS, DNSSEC, IPv6, RPKI, security headers)
+      - Mail standards (DMARC, DKIM, SPF, STARTTLS, DANE)
+      - Batch API for bulk compliance scans
+      - Step-by-step implementation guides
+    genericName: Claude Code plugin
+    longDescription: >
+      Claude Code plugin for testing and implementing modern internet standards
+      as tested by internet.nl. Contains skills for web standards, mail
+      standards, the batch API, and implementation guides from the toolbox wiki.
+    shortDescription: Claude Code plugin for internet.nl standards
+developmentStatus: development
+legal:
+  license: EUPL-1.2
+localisation:
+  availableLanguages:
+    - nl
+    - en
+  localisationReady: false
+maintenance:
+  contacts:
+    - name: MinBZK
+  type: community
+name: internet-nl-plugin
+releaseDate: '2026-02-22'
+softwareVersion: 0.1.0
+softwareType: standalone/other
+url: https://github.com/MinBZK/internet-nl-plugin
