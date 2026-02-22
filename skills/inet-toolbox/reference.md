@@ -324,6 +324,6 @@ done
 - [toolbox-wiki](https://github.com/internetstandards/toolbox-wiki) - Alle implementatiegidsen
 - [internet.nl](https://internet.nl) - Test het resultaat
 - [Forum Standaardisatie](https://www.forumstandaardisatie.nl/open-standaarden) - Standaardenstatus
-- [NCSC - TLS factsheet](https://www.ncsc.nl/documenten/factsheets/2019/juni/01/factsheet-beveilig-verbindingen-met-tls)
+- [NCSC - TLS-richtlijnen](https://www.ncsc.nl/en/transport-layer-security-tls/it-security-guidelines-transport-layer-security-tls)
 - [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/)
 - [Let's Encrypt documentatie](https://letsencrypt.org/docs/)

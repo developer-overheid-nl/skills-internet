@@ -316,5 +316,5 @@ Verzendende server                    Ontvangende server
 - [Forum Standaardisatie - DKIM](https://www.forumstandaardisatie.nl/open-standaarden/dkim)
 - [Forum Standaardisatie - STARTTLS](https://www.forumstandaardisatie.nl/open-standaarden/starttls-en-dane)
 - [Forum Standaardisatie - DANE](https://www.forumstandaardisatie.nl/open-standaarden/starttls-en-dane)
-- [NCSC - TLS-aanbevelingen](https://www.ncsc.nl/onderwerpen/verbindingsbeveiliging)
+- [NCSC - TLS-richtlijnen](https://www.ncsc.nl/en/transport-layer-security-tls/it-security-guidelines-transport-layer-security-tls)
 - [toolbox-wiki](https://github.com/internetstandards/toolbox-wiki) - Implementatiegidsen

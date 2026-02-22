@@ -60,23 +60,30 @@ De batch API werkt met een poll-model:
 
 | Actie | Methode | Endpoint |
 |-------|---------|----------|
-| Webtest indienen | `POST` | `/api/batch/v2/web/` |
-| Mailtest indienen | `POST` | `/api/batch/v2/mail/` |
-| Status opvragen | `GET` | `/api/batch/v2/results/<request-id>/` |
-| Resultaten ophalen | `GET` | `/api/batch/v2/results/<request-id>/` (als status done) |
+| Batch indienen (web of mail) | `POST` | `/api/batch/v2/requests` |
+| Overzicht eigen requests | `GET` | `/api/batch/v2/requests` |
+| Status opvragen | `GET` | `/api/batch/v2/requests/{request_id}` |
+| Batch annuleren | `PATCH` | `/api/batch/v2/requests/{request_id}` |
+| Resultaten ophalen | `GET` | `/api/batch/v2/requests/{request_id}/results` |
+| Technische resultaten | `GET` | `/api/batch/v2/requests/{request_id}/results_technical` |
+| Rapportage-metadata | `GET` | `/api/batch/v2/metadata/report` |
 
 Base URL: `https://batch.internet.nl`
+
+Het testtype (`"web"` of `"mail"`) wordt meegegeven in de request body, niet in het URL-pad.
+Het `request_id` is een 32-karakter hexadecimale string.
 
 ## Batch indienen
 
 ### Webtest
 
 ```bash
-curl -s -X POST https://batch.internet.nl/api/batch/v2/web/ \
+curl -s -X POST https://batch.internet.nl/api/batch/v2/requests \
   -u "gebruiker:wachtwoord" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Mijn webscan 2026-02",
+    "type": "web",
     "domains": [
       "example.nl",
       "example2.nl",
@@ -91,7 +98,7 @@ curl -s -X POST https://batch.internet.nl/api/batch/v2/web/ \
 {
   "success": true,
   "data": {
-    "request_id": "abcdef123456",
+    "request_id": "abcdef1234567890abcdef1234567890",
     "request_type": "web",
     "status": "registering"
   }
@@ -101,11 +108,12 @@ curl -s -X POST https://batch.internet.nl/api/batch/v2/web/ \
 ### Mailtest
 
 ```bash
-curl -s -X POST https://batch.internet.nl/api/batch/v2/mail/ \
+curl -s -X POST https://batch.internet.nl/api/batch/v2/requests \
   -u "gebruiker:wachtwoord" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Mijn mailscan 2026-02",
+    "type": "mail",
     "domains": [
       "example.nl",
       "example2.nl"
@@ -117,7 +125,11 @@ curl -s -X POST https://batch.internet.nl/api/batch/v2/mail/ \
 
 ```bash
 # Status opvragen
-curl -s https://batch.internet.nl/api/batch/v2/results/abcdef123456/ \
+curl -s https://batch.internet.nl/api/batch/v2/requests/abcdef1234567890abcdef1234567890 \
+  -u "gebruiker:wachtwoord"
+
+# Resultaten ophalen (als status "done" is)
+curl -s https://batch.internet.nl/api/batch/v2/requests/abcdef1234567890abcdef1234567890/results \
   -u "gebruiker:wachtwoord"
 ```
 
@@ -126,7 +138,7 @@ curl -s https://batch.internet.nl/api/batch/v2/results/abcdef123456/ \
 | Status | Betekenis |
 |--------|-----------|
 | `registering` | Batch wordt geregistreerd |
-| `live` | Tests worden uitgevoerd |
+| `running` | Tests worden uitgevoerd |
 | `generating` | Resultaten worden gegenereerd |
 | `done` | Resultaten beschikbaar |
 | `error` | Er is een fout opgetreden |
@@ -150,20 +162,21 @@ fi
 echo "Wachten op resultaten voor $REQUEST_ID..."
 
 while true; do
-  RESPONSE=$(curl -s "${API_URL}/api/batch/v2/results/${REQUEST_ID}/" \
+  STATUS_RESPONSE=$(curl -s "${API_URL}/api/batch/v2/requests/${REQUEST_ID}" \
     -u "${USER}:${PASS}")
 
-  STATUS=$(echo "$RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin)['data']['status'])")
+  STATUS=$(echo "$STATUS_RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin)['data']['status'])")
 
   echo "Status: $STATUS"
 
   if [ "$STATUS" = "done" ]; then
-    echo "$RESPONSE" | python3 -m json.tool > "resultaten_${REQUEST_ID}.json"
+    curl -s "${API_URL}/api/batch/v2/requests/${REQUEST_ID}/results" \
+      -u "${USER}:${PASS}" | python3 -m json.tool > "resultaten_${REQUEST_ID}.json"
     echo "Resultaten opgeslagen in resultaten_${REQUEST_ID}.json"
     break
   elif [ "$STATUS" = "error" ] || [ "$STATUS" = "cancelled" ]; then
     echo "Fout: batch heeft status $STATUS"
-    echo "$RESPONSE" | python3 -m json.tool
+    echo "$STATUS_RESPONSE" | python3 -m json.tool
     exit 1
   fi
 
@@ -184,9 +197,9 @@ import requests
 def submit_batch(api_url: str, credentials: tuple, test_type: str, name: str, domains: list) -> str:
     """Dien een batch test in en retourneer het request-ID."""
     response = requests.post(
-        f"{api_url}/api/batch/v2/{test_type}/",
+        f"{api_url}/api/batch/v2/requests",
         auth=credentials,
-        json={"name": name, "domains": domains},
+        json={"name": name, "type": test_type, "domains": domains},
         timeout=30,
     )
     response.raise_for_status()
@@ -196,16 +209,19 @@ def submit_batch(api_url: str, credentials: tuple, test_type: str, name: str, do
 
 def poll_results(api_url: str, credentials: tuple, request_id: str, interval: int = 30) -> dict:
     """Poll tot resultaten beschikbaar zijn."""
-    url = f"{api_url}/api/batch/v2/results/{request_id}/"
+    status_url = f"{api_url}/api/batch/v2/requests/{request_id}"
+    results_url = f"{api_url}/api/batch/v2/requests/{request_id}/results"
     while True:
-        response = requests.get(url, auth=credentials, timeout=30)
+        response = requests.get(status_url, auth=credentials, timeout=30)
         response.raise_for_status()
         data = response.json()
         status = data["data"]["status"]
         print(f"Status: {status}")
 
         if status == "done":
-            return data
+            results = requests.get(results_url, auth=credentials, timeout=30)
+            results.raise_for_status()
+            return results.json()
         if status in ("error", "cancelled"):
             raise RuntimeError(f"Batch mislukt met status: {status}")
 
@@ -303,6 +319,7 @@ per categorie en individuele tests.
 | `dnssec` | DNSSEC-validatie |
 | `tls` | TLS-versie, cipher suites, HSTS, certificaat |
 | `appsecpriv` | Security headers, security.txt |
+| `rpki` | RPKI Route Origin Validation |
 
 ### Categorieen (mailtest)
 
@@ -312,6 +329,7 @@ per categorie en individuele tests.
 | `dnssec` | DNSSEC op maildomein en MX |
 | `auth` | SPF, DKIM, DMARC |
 | `tls` | STARTTLS, DANE, certificaat |
+| `rpki` | RPKI Route Origin Validation |
 
 ## Dashboard-integratie
 
@@ -371,7 +389,7 @@ regelmatig te scannen en trends bij te houden.
 | HTTP 429 | Rate limit bereikt | Wacht en probeer later opnieuw |
 | Status `error` | Ongeldige domeinen of serverfout | Controleer de domeinnamen in de batch |
 | Lege resultaten | Test nog niet afgerond | Verhoog het poll-interval, controleer status |
-| Timeout bij grote batch | Te veel domeinen tegelijk | Splits in kleinere batches (max 250 per batch) |
+| Timeout bij grote batch | Te veel domeinen tegelijk | Splits in kleinere batches (max 5.000 per batch) |
 
 ## Achtergrondinfo
 

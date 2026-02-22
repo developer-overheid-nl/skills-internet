@@ -89,7 +89,7 @@ dig example.nl +trace +dnssec | grep -E '(RRSIG|DS|DNSKEY)'
 server. Internet.nl vereist TLS 1.2 of 1.3 met sterke cipher suites.
 
 **Waarom verplicht:** Beschermt vertrouwelijkheid en integriteit van communicatie.
-Zie ook de [NCSC TLS-aanbevelingen](https://www.ncsc.nl/onderwerpen/verbindingsbeveiliging).
+Zie ook de [NCSC TLS-richtlijnen](https://www.ncsc.nl/en/transport-layer-security-tls/it-security-guidelines-transport-layer-security-tls).
 
 **Wat test internet.nl:**
 - HTTPS bereikbaar en redirect van HTTP naar HTTPS

@@ -32,7 +32,7 @@ Registratie voor API-toegang via [internet.nl](https://internet.nl).
 
 ### Batch indienen
 
-**Endpoint:** `POST /api/batch/v2/{web|mail}/`
+**Endpoint:** `POST /api/batch/v2/requests`
 
 **Headers:**
 - `Content-Type: application/json`
@@ -43,6 +43,7 @@ Registratie voor API-toegang via [internet.nl](https://internet.nl).
 ```json
 {
   "name": "Beschrijvende naam voor de scan",
+  "type": "web",
   "domains": [
     "domein1.nl",
     "domein2.nl"
@@ -54,17 +55,19 @@ Registratie voor API-toegang via [internet.nl](https://internet.nl).
 
 | Veld | Type | Verplicht | Beschrijving |
 |------|------|-----------|-------------|
-| `name` | string | Ja | Naam van de batch (voor eigen administratie) |
+| `name` | string | Nee | Naam van de batch, max 255 tekens (voor eigen administratie) |
+| `type` | string | Ja | Testtype: `"web"` of `"mail"` |
 | `domains` | array[string] | Ja | Lijst van te testen domeinen |
 
 ### Beperkingen
 
 | Beperking | Waarde |
 |-----------|--------|
-| Maximaal domeinen per batch | 250 |
-| Maximaal gelijktijdige batches | 5 |
-| Minimaal interval tussen batches | 10 minuten |
-| Rate limit | Afgestemd op gebruik, neem contact op bij grote volumes |
+| Maximaal domeinen per batch | 5.000 |
+| Maximaal batch requests per week | 2 |
+| Verwerking per gebruiker | Sequentieel (FIFO, 1 actieve batch tegelijk) |
+
+Bron: [Terms of Use](https://github.com/internetstandards/Internet.nl-API-docs/blob/main/terms-of-use.md)
 
 ## Response-formaat
 
@@ -74,7 +77,7 @@ Registratie voor API-toegang via [internet.nl](https://internet.nl).
 {
   "success": true,
   "data": {
-    "request_id": "abc123def456",
+    "request_id": "abcdef1234567890abcdef1234567890",
     "request_type": "web",
     "name": "Beschrijvende naam",
     "status": "registering",
@@ -91,10 +94,10 @@ Registratie voor API-toegang via [internet.nl](https://internet.nl).
 {
   "success": true,
   "data": {
-    "request_id": "abc123def456",
+    "request_id": "abcdef1234567890abcdef1234567890",
     "request_type": "web",
     "name": "Beschrijvende naam",
-    "status": "live",
+    "status": "running",
     "submission_date": "2026-02-22T10:00:00Z",
     "finished_date": null,
     "num_domains": 3,
@@ -113,7 +116,7 @@ Registratie voor API-toegang via [internet.nl](https://internet.nl).
 {
   "success": true,
   "data": {
-    "request_id": "abc123def456",
+    "request_id": "abcdef1234567890abcdef1234567890",
     "request_type": "web",
     "status": "done",
     "finished_date": "2026-02-22T10:30:00Z",
@@ -302,10 +305,10 @@ class InternetNLClient:
 
     def _submit(self, test_type: str, name: str, domains: list[str]) -> str:
         """Generieke batch submit."""
-        url = f"{self.api_url}/api/batch/v2/{test_type}/"
+        url = f"{self.api_url}/api/batch/v2/requests"
         response = self.session.post(
             url,
-            json={"name": name, "domains": domains},
+            json={"name": name, "type": test_type, "domains": domains},
             timeout=30,
         )
         response.raise_for_status()
@@ -314,9 +317,16 @@ class InternetNLClient:
             raise RuntimeError(f"API fout: {data.get('error', {}).get('message', 'Onbekend')}")
         return data["data"]["request_id"]
 
+    def get_status(self, request_id: str) -> dict:
+        """Haal status op (eenmalig)."""
+        url = f"{self.api_url}/api/batch/v2/requests/{request_id}"
+        response = self.session.get(url, timeout=30)
+        response.raise_for_status()
+        return response.json()
+
     def get_results(self, request_id: str) -> dict:
-        """Haal resultaten op (eenmalig)."""
-        url = f"{self.api_url}/api/batch/v2/results/{request_id}/"
+        """Haal resultaten op (als status done is)."""
+        url = f"{self.api_url}/api/batch/v2/requests/{request_id}/results"
         response = self.session.get(url, timeout=30)
         response.raise_for_status()
         return response.json()
@@ -330,7 +340,7 @@ class InternetNLClient:
         """Poll tot resultaten beschikbaar zijn."""
         start = time.time()
         while time.time() - start < max_wait:
-            data = self.get_results(request_id)
+            data = self.get_status(request_id)
             status = data["data"]["status"]
             progress = data["data"].get("progress", {})
             logger.info(
@@ -340,7 +350,7 @@ class InternetNLClient:
             )
 
             if status == "done":
-                return data
+                return self.get_results(request_id)
             if status in ("error", "cancelled"):
                 raise RuntimeError(f"Batch mislukt: {status}")
 

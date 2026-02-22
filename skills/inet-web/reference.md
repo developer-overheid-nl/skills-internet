@@ -37,7 +37,7 @@ Voor TLS 1.3 zijn alleen deze cipher suites beschikbaar (allemaal goed):
 - Geldige keten naar een vertrouwde root CA
 - Hostnaam in Subject Alternative Name (SAN)
 Bronnen:
-- [NCSC - TLS-aanbevelingen](https://www.ncsc.nl/onderwerpen/verbindingsbeveiliging)
+- [NCSC - TLS-richtlijnen](https://www.ncsc.nl/en/transport-layer-security-tls/it-security-guidelines-transport-layer-security-tls)
 - [Forum Standaardisatie - TLS](https://www.forumstandaardisatie.nl/open-standaarden/tls)
 
 ## DNSSEC protocol-details
@@ -241,7 +241,7 @@ mv security.txt.signed .well-known/security.txt
 
 Bronnen:
 - [Forum Standaardisatie - security.txt](https://www.forumstandaardisatie.nl/open-standaarden/securitytxt)
-- [NCSC - Coordinated Vulnerability Disclosure](https://www.ncsc.nl/onderwerpen/kwetsbaarheid-melden)
+- [NCSC - Kwetsbaarheid melden (CVD)](https://www.ncsc.nl/contact/kwetsbaarheid-melden)
 
 ## RPKI - details
 
