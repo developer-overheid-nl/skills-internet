@@ -43,6 +43,10 @@ De skills zijn gebaseerd op:
 - [internet.nl](https://internet.nl) — testcriteria per standaard
 - [Forum Standaardisatie](https://www.forumstandaardisatie.nl) — status per standaard op de lijst
 
+## Onderdeel van
+
+Deze plugin is onderdeel van de [overheid-claude-plugins](https://github.com/MinBZK/overheid-claude-plugins) marketplace.
+
 ## Licentie
 
 [EUPL-1.2](LICENSE) - European Union Public Licence
