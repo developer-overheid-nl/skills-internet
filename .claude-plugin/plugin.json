@@ -1,5 +1,5 @@
 {
   "name": "internet-nl",
   "description": "Plugin voor het testen en implementeren van moderne internetstandaarden conform internet.nl. Bevat skills voor 5 domeinen: webstandaarden (HTTPS, TLS, DNSSEC, IPv6, RPKI), mailstandaarden (DMARC, DKIM, SPF, STARTTLS, DANE), batch API, en implementatiegidsen uit de toolbox-wiki.",
-  "version": "0.1.0"
+  "version": "0.1.1"
 }
