@@ -259,6 +259,9 @@ echo "Nieuw TLSA-record: _25._tcp.$DOMAIN. IN TLSA 3 1 1 $HASH"
 
 ## MTA-STS configuratie
 
+> **Let op:** MTA-STS wordt niet getest door internet.nl. Het is een aanvullende
+> best practice naast DANE.
+
 ### Vereisten
 
 1. DNS TXT-record: `_mta-sts.example.nl`
@@ -300,7 +303,6 @@ Verzendende server                    Ontvangende server
      |-- SPF (IP check via DNS) -->         |
      |-- STARTTLS (versleuteling) -------->  |
      |      \-- DANE (cert verificatie) --> |
-     |      \-- MTA-STS (TLS afdwingen) -> |
      |                                      |
      |                              DMARC beleid toepassen
      |                              (op basis van SPF+DKIM)

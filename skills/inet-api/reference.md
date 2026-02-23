@@ -182,6 +182,12 @@ Bron: [Terms of Use](https://github.com/internetstandards/Internet.nl-API-docs/b
                 "web_appsecpriv_x_frame": {"verdict": "passed"},
                 "web_appsecpriv_securitytxt": {"verdict": "passed"}
               }
+            },
+            "rpki": {
+              "verdict": "passed",
+              "tests": {
+                "web_rpki_exists": {"verdict": "passed"}
+              }
             }
           }
         },
@@ -238,6 +244,11 @@ De mailtest bevat andere categorieen:
         "mail_tls_dane_exist": {},
         "mail_tls_dane_valid": {},
         "mail_tls_dane_rollover": {}
+      }
+    },
+    "rpki": {
+      "tests": {
+        "mail_rpki_exists": {}
       }
     }
   }
