@@ -44,6 +44,6 @@ maintenance:
   type: community
 name: internet-nl-plugin
 releaseDate: '2026-02-22'
-softwareVersion: 0.1.2
+softwareVersion: 0.1.3
 softwareType: standalone/other
 url: https://github.com/MinBZK/internet-nl-plugin
