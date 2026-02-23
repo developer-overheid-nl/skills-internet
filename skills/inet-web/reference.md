@@ -241,7 +241,7 @@ mv security.txt.signed .well-known/security.txt
 
 Bronnen:
 - [Forum Standaardisatie - security.txt](https://www.forumstandaardisatie.nl/open-standaarden/securitytxt)
-- [NCSC - Kwetsbaarheid melden (CVD)](https://www.ncsc.nl/contact/kwetsbaarheid-melden)
+- [NCSC - Kwetsbaarheid melden (CVD)](https://www.ncsc.nl/dienstverlening/kwetsbaarheid-melden-cvd)
 
 ## RPKI - details
 

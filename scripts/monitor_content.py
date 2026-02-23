@@ -69,9 +69,11 @@ def normalize_html(html: str) -> str:
     html = re.sub(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[^\s\"'<]*", "", html)
     # Verwijder generator meta-tags
     html = re.sub(r'<meta\s+name="generator"[^>]*>', "", html)
-    # Verwijder nonces (HTML-attributen en JS-assignments)
+    # Verwijder nonces (HTML-attributen, JS-assignments en escaped JSON)
     html = re.sub(r'nonce="[^"]*"', "", html)
     html = re.sub(r'\.nonce\s*=\s*"[^"]*"', '.nonce = ""', html)
+    # Next.js/React escaped JSON nonces: \"nonce\":\"base64value\"
+    html = re.sub(r'\\"nonce\\":\\"[^"\\]*\\"', r'\\"nonce\\":\\"NONCE\\"', html)
     # Verwijder ReSpec-specifieke build timestamps
     html = re.sub(r"respecVersion\s*=\s*['\"][^'\"]*['\"]", "", html)
     # Verwijder HTML comments (build hashes, timestamps, etc.)
@@ -93,6 +95,8 @@ def normalize_html(html: str) -> str:
     html = re.sub(r"js-view-dom-id-[a-f0-9]+", "js-view-dom-id-HASH", html)
     # Drupal CMS: permissionsHash (verandert bij module/permissie updates)
     html = re.sub(r'"permissionsHash":"[a-f0-9]+"', '"permissionsHash":"HASH"', html)
+    # Next.js RSC streaming: inline data scripts veranderen chunking per request
+    html = re.sub(r"<script\s*>self\.__next_f\.push\([^<]*\)</script>", "", html)
     return html
 
 

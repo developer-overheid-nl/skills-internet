@@ -117,4 +117,4 @@ gh api repos/internetstandards/Internet.nl-API-docs/git/trees/main?recursive=1 \
 - [internet.nl/test-site](https://internet.nl/test-site/) - Website testen
 - [internet.nl/test-mail](https://internet.nl/test-mail/) - E-mail testen
 - [Forum Standaardisatie - Open standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
-- [NCSC - Publicaties](https://www.ncsc.nl/documenten)
+- [NCSC - Cybersecurity thema's](https://www.ncsc.nl/cybersecurity-themas)
