@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/MinBZK/internet-nl-plugin/compare/v0.1.2...v0.1.3) (2026-02-23)
+
+
+### Opgelost
+
+* voorkom false positives in monitoring voor NCSC.nl (Next.js) ([#9](https://github.com/MinBZK/internet-nl-plugin/issues/9)) ([44351e3](https://github.com/MinBZK/internet-nl-plugin/commit/44351e39a8588f2de6fe3bb67fa6b19d44266db2))
+
 ## [0.1.2](https://github.com/MinBZK/internet-nl-plugin/compare/v0.1.1...v0.1.2) (2026-02-22)
 
 
