@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/MinBZK/internet-nl-plugin/compare/v0.1.1...v0.1.2) (2026-02-22)
+
+
+### Opgelost
+
+* handle all URL types in content monitor ([#4](https://github.com/MinBZK/internet-nl-plugin/issues/4)) ([5cb6a2b](https://github.com/MinBZK/internet-nl-plugin/commit/5cb6a2b3bf1d9a29a0cfbb0a98c4b9bb001b9eff))
+
 ## [0.1.1](https://github.com/MinBZK/internet-nl-plugin/compare/v0.1.0...v0.1.1) (2026-02-22)
 
 
