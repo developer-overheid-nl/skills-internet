@@ -34,6 +34,24 @@ class TestNormalizeHtml:
         assert "xyz789" not in result
         assert '.nonce = ""' in result
 
+    def test_nonces_escaped_json(self):
+        """Next.js/React escaped JSON nonces (NCSC.nl pattern)."""
+        html = (
+            r":HL[\"/_next/static/css/file.css\","
+            r"\"style\",{\"nonce\":\"NGZjMWJjZmYtYTY4MS00YzIx\"}]"
+        )
+        result = normalize_html(html)
+        assert "NGZjMWJjZmYtYTY4MS00YzIx" not in result
+        assert r"\"nonce\":\"NONCE\"" in result
+
+    def test_nextjs_rsc_inline_scripts(self):
+        """Next.js RSC inline data scripts worden gestript (chunking varieert per request)."""
+        html = '<div>content</div><script >self.__next_f.push([1,"1e:data"])</script><p>more</p>'
+        result = normalize_html(html)
+        assert "self.__next_f" not in result
+        assert "<div>content</div>" in result
+        assert "<p>more</p>" in result
+
     def test_html_comments_verwijderd(self):
         html = "<div><!-- build hash: abc123 --><p>content</p></div>"
         result = normalize_html(html)
