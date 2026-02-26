@@ -29,7 +29,7 @@ De standaarden staan op de
 | Skill | Wanneer gebruiken | Standaarden |
 |-------|-------------------|-------------|
 | `/inet-web` | Website testen, HTTPS/TLS instellen, security headers | IPv6, DNSSEC, HTTPS/TLS, HSTS, security headers, security.txt, RPKI |
-| `/inet-mail` | E-mail beveiligen, DNS records voor mail | SPF, DKIM, DMARC, STARTTLS, DANE, MTA-STS |
+| `/inet-mail` | E-mail beveiligen, DNS records voor mail | SPF, DKIM, DMARC, STARTTLS, DANE, IPv6, RPKI |
 | `/inet-api` | Bulk scans via de API, dashboards bouwen | Batch API v2, authenticatie, resultaten JSON |
 | `/inet-toolbox` | Stap-voor-stap implementatie, server configuratie | DNSSEC, HTTPS, DMARC, DKIM, SPF, DANE, IPv6 |
 
@@ -63,7 +63,8 @@ De standaarden staan op de
 | DKIM | Verplicht (pas-toe-of-leg-uit) | DomainKeys Identified Mail, digitale handtekening op e-mail |
 | DMARC | Verplicht (pas-toe-of-leg-uit) | Domain-based Message Authentication, bouwt voort op SPF+DKIM |
 | STARTTLS + DANE | Verplicht (pas-toe-of-leg-uit) | Versleuteling van SMTP-verkeer + DNS-gebaseerde certificaatverificatie |
-| MTA-STS | Getest door internet.nl (geen Forum status) | Mail Transfer Agent Strict Transport Security, dwingt TLS af |
+| IPv6 | Verplicht (pas-toe-of-leg-uit) | Internetprotocol versie 6, bereikbaarheid van MX- en nameservers |
+| RPKI | Verplicht (pas-toe-of-leg-uit) | Route Origin Validation voor MX- en nameservers |
 
 ## Repositories
 

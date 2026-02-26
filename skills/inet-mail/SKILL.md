@@ -3,7 +3,7 @@ name: inet-mail
 description: >-
   Mailstandaarden getest door internet.nl: SPF (Sender Policy Framework),
   DKIM (DomainKeys Identified Mail), DMARC (Domain-based Message Authentication),
-  STARTTLS, MTA-STS, DANE (DNS-based Authentication of Named Entities).
+  STARTTLS, DANE (DNS-based Authentication of Named Entities).
   Triggers: mail test, DMARC, DKIM, SPF, STARTTLS, DANE,
   mailserver beveiliging, email security, e-mailbeveiliging,
   mailstandaarden, anti-spoofing
@@ -194,17 +194,15 @@ _dmarc.example.nl. IN TXT "v=DMARC1; p=reject; rua=mailto:dmarc@example.nl; adki
 dig TXT _dmarc.example.nl +short
 ```
 
-### 4. STARTTLS en MTA-STS
+### 4. STARTTLS
 
-**Wat:** STARTTLS versleutelt SMTP-verkeer tussen mailservers. MTA-STS
-(Mail Transfer Agent Strict Transport Security) dwingt af dat TLS wordt gebruikt.
+**Wat:** STARTTLS versleutelt SMTP-verkeer tussen mailservers.
 
 **Wat test internet.nl:**
 - MX-servers ondersteunen STARTTLS
 - TLS 1.2 of hoger (TLS 1.0/1.1 geeft een phase-out waarschuwing; SSL 2.0/3.0 is een harde fout)
 - Geldig certificaat
 - Geen terugval naar onversleuteld verkeer
-- MTA-STS beleid (optioneel maar aanbevolen)
 
 **Testen:**
 
@@ -215,25 +213,6 @@ dig MX example.nl +short
 # STARTTLS testen op MX-server
 openssl s_client -connect mx.example.nl:25 -starttls smtp </dev/null 2>/dev/null | \
   grep -E '(Protocol|Cipher|Verify)'
-
-# MTA-STS beleid ophalen
-curl -s https://mta-sts.example.nl/.well-known/mta-sts.txt
-```
-
-**MTA-STS DNS-record:**
-
-```dns
-_mta-sts.example.nl. IN TXT "v=STSv1; id=20260101T000000"
-```
-
-**MTA-STS beleidsbestand** (op `https://mta-sts.example.nl/.well-known/mta-sts.txt`):
-
-```text
-version: STSv1
-mode: enforce
-mx: mx1.example.nl
-mx: mx2.example.nl
-max_age: 604800
 ```
 
 ### 5. DANE (DNS-based Authentication of Named Entities)
@@ -299,7 +278,6 @@ dig MX example.nl +dnssec +short
 | DMARC `p=none` is onvoldoende | Fase 1 monitoring nog actief | Verschuif naar `p=quarantine` of `p=reject` |
 | STARTTLS niet aangeboden | Mailserver niet geconfigureerd | Schakel TLS in op de mailserver |
 | DANE TLSA mismatch | Certificaat vernieuwd zonder TLSA-update | Werk TLSA-record bij met hash van nieuw certificaat |
-| MTA-STS validatie faalt | Certificaat of DNS niet correct | Controleer dat `mta-sts.example.nl` een geldig certificaat heeft |
 
 ## Achtergrondinfo
 
