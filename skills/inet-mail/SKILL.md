@@ -16,6 +16,8 @@ allowed-tools:
   - WebFetch(*)
 ---
 
+> **Let op:** De beschrijvingen in deze skill zijn informatieve samenvattingen — niet de officiële standaarden zelf. De testcriteria op [internet.nl](https://internet.nl) en de definities op [forumstandaardisatie.nl](https://www.forumstandaardisatie.nl/open-standaarden) zijn altijd leidend. Overheidsorganisaties die generatieve AI inzetten dienen te voldoen aan het [Rijksbrede beleidskader voor generatieve AI](https://www.government.nl/documents/policy-notes/2025/01/31/government-wide-position-on-the-use-of-generative-ai). Zie [DISCLAIMER.md](../../DISCLAIMER.md).
+
 **Gebruik deze skill wanneer een gebruiker vraagt over mailstandaarden die internet.nl test,
 zoals SPF, DKIM, DMARC, STARTTLS of DANE. Genereer correcte DNS-records en diagnostische
 commando's. Verwijs naar `/inet-toolbox` voor stap-voor-stap implementatiegidsen.**
