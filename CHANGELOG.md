@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/developer-overheid-nl/internet-plugin/compare/v0.1.3...v0.1.4) (2026-02-26)
+
+
+### Opgelost
+
+* corrigeer feitelijke fouten in skills (MTA-STS, RPKI, IPv6) ([#12](https://github.com/developer-overheid-nl/internet-plugin/issues/12)) ([f84b55b](https://github.com/developer-overheid-nl/internet-plugin/commit/f84b55b5b8f9c480bbc2591fa96f2e0208edb424)), closes [#11](https://github.com/developer-overheid-nl/internet-plugin/issues/11)
+
 ## [0.1.3](https://github.com/developer-overheid-nl/internet-plugin/compare/v0.1.2...v0.1.3) (2026-02-23)
 
 
