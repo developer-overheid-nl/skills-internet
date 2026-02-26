@@ -13,6 +13,8 @@ allowed-tools:
   - WebFetch(*)
 ---
 
+> **Let op:** De beschrijvingen in deze skill zijn informatieve samenvattingen — niet de officiële standaarden zelf. De testcriteria op [internet.nl](https://internet.nl) en de definities op [forumstandaardisatie.nl](https://www.forumstandaardisatie.nl/open-standaarden) zijn altijd leidend. Overheidsorganisaties die generatieve AI inzetten dienen te voldoen aan het [Rijksbrede beleidskader voor generatieve AI](https://www.government.nl/documents/policy-notes/2025/01/31/government-wide-position-on-the-use-of-generative-ai). Zie [DISCLAIMER.md](../../DISCLAIMER.md).
+
 **Gebruik deze skill wanneer een gebruiker vraagt naar een overzicht van internetstandaarden,
 naar de internet.nl testsuite in het algemeen, of wanneer niet duidelijk is welke sub-skill
 van toepassing is. Routeer door naar de juiste sub-skill zodra het domein helder is.**
