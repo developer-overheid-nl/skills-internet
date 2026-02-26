@@ -9,12 +9,12 @@
 
 ```bash
 # Via de overheid-plugins marketplace (aanbevolen)
-claude plugin marketplace add MinBZK/overheid-claude-plugins
+claude plugin marketplace add developer-overheid-nl/overheid-claude-plugins
 claude plugin install internet-nl@overheid-plugins
 
 # Per sessie
-git clone https://github.com/MinBZK/internet-nl-plugin.git
-claude --plugin-dir ./internet-nl-plugin
+git clone https://github.com/developer-overheid-nl/internet-plugin.git
+claude --plugin-dir ./internet-plugin
 ```
 
 ## Skills
@@ -45,7 +45,7 @@ De skills zijn gebaseerd op:
 
 ## Onderdeel van
 
-Deze plugin is onderdeel van de [overheid-claude-plugins](https://github.com/MinBZK/overheid-claude-plugins) marketplace.
+Deze plugin is onderdeel van de [overheid-claude-plugins](https://github.com/developer-overheid-nl/overheid-claude-plugins) marketplace.
 
 ## Licentie
 

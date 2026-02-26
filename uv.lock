@@ -96,7 +96,7 @@ wheels = [
 ]
 
 [[package]]
-name = "internet-nl-plugin"
+name = "internet-plugin"
 version = "0.1.2"
 source = { virtual = "." }
 dependencies = [
