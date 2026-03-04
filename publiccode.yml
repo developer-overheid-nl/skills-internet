@@ -42,8 +42,8 @@ maintenance:
   contacts:
     - name: developer-overheid-nl
   type: community
-name: internet-plugin
+name: skills-internet
 releaseDate: '2026-02-22'
 softwareVersion: 0.1.4
 softwareType: standalone/other
-url: https://github.com/developer-overheid-nl/internet-plugin
+url: https://github.com/developer-overheid-nl/skills-internet
