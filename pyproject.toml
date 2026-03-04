@@ -1,5 +1,5 @@
 [project]
-name = "internet-plugin"
+name = "skills-internet"
 version = "0.1.4"
 description = "Internet.nl Claude Code Plugin - Test en implementeer moderne internetstandaarden"
 requires-python = ">=3.12"
