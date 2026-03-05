@@ -386,10 +386,10 @@ ping6 example.nl
 
 ## Repositories
 
-| Repository | Beschrijving |
-|-----------|-------------|
-| [toolbox-wiki](https://github.com/internetstandards/toolbox-wiki) | Implementatiegidsen (bronmateriaal) |
-| [Internet.nl](https://github.com/internetstandards/Internet.nl) | Testsuite om resultaat te controleren |
+| Repository | Beschrijving | Licentie |
+|-----------|-------------|--------|
+| [toolbox-wiki](https://github.com/internetstandards/toolbox-wiki) | Implementatiegidsen (bronmateriaal) | [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) |
+| [Internet.nl](https://github.com/internetstandards/Internet.nl) | Testsuite om resultaat te controleren | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 
 ## Veelvoorkomende problemen
 
