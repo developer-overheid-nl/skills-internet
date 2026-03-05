@@ -271,10 +271,10 @@ dig MX example.nl +dnssec +short
 
 ## Repositories
 
-| Repository | Beschrijving |
-|-----------|-------------|
-| [Internet.nl](https://github.com/internetstandards/Internet.nl) | Testsuite broncode |
-| [toolbox-wiki](https://github.com/internetstandards/toolbox-wiki) | Implementatiegidsen |
+| Repository | Beschrijving | Licentie |
+|-----------|-------------|--------|
+| [Internet.nl](https://github.com/internetstandards/Internet.nl) | Testsuite broncode | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [toolbox-wiki](https://github.com/internetstandards/toolbox-wiki) | Implementatiegidsen | Niet gespecificeerd |
 
 ## Veelvoorkomende problemen
 

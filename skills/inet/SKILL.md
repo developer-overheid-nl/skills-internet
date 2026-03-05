@@ -78,11 +78,11 @@ De standaarden staan op de
 De broncode en documentatie staan onder de GitHub-organisatie
 [internetstandards](https://github.com/internetstandards):
 
-| Repository | Beschrijving |
-|-----------|-------------|
-| [Internet.nl](https://github.com/internetstandards/Internet.nl) | De internet.nl testsuite (Python/Django) |
-| [Internet.nl-API-docs](https://github.com/internetstandards/Internet.nl-API-docs) | Documentatie voor de batch API (v2) |
-| [toolbox-wiki](https://github.com/internetstandards/toolbox-wiki) | Implementatiegidsen per standaard en platform |
+| Repository | Beschrijving | Licentie |
+|-----------|-------------|--------|
+| [Internet.nl](https://github.com/internetstandards/Internet.nl) | De internet.nl testsuite (Python/Django) | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [Internet.nl-API-docs](https://github.com/internetstandards/Internet.nl-API-docs) | Documentatie voor de batch API (v2) | Niet gespecificeerd |
+| [toolbox-wiki](https://github.com/internetstandards/toolbox-wiki) | Implementatiegidsen per standaard en platform | Niet gespecificeerd |
 
 ## Handige commando's voor repo-exploratie
 
