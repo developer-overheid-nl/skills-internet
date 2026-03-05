@@ -299,7 +299,7 @@ curl -s "https://stat.ripe.net/data/rpki-validation/data.json?resource=${ip}" | 
 | Repository | Beschrijving | Licentie |
 |-----------|-------------|--------|
 | [Internet.nl](https://github.com/internetstandards/Internet.nl) | Testsuite broncode (Python/Django) | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [toolbox-wiki](https://github.com/internetstandards/toolbox-wiki) | Implementatiegidsen per standaard | Niet gespecificeerd |
+| [toolbox-wiki](https://github.com/internetstandards/toolbox-wiki) | Implementatiegidsen per standaard | [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) |
 
 ## Veelvoorkomende problemen
 

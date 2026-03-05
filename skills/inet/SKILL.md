@@ -81,8 +81,8 @@ De broncode en documentatie staan onder de GitHub-organisatie
 | Repository | Beschrijving | Licentie |
 |-----------|-------------|--------|
 | [Internet.nl](https://github.com/internetstandards/Internet.nl) | De internet.nl testsuite (Python/Django) | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [Internet.nl-API-docs](https://github.com/internetstandards/Internet.nl-API-docs) | Documentatie voor de batch API (v2) | Niet gespecificeerd |
-| [toolbox-wiki](https://github.com/internetstandards/toolbox-wiki) | Implementatiegidsen per standaard en platform | Niet gespecificeerd |
+| [Internet.nl-API-docs](https://github.com/internetstandards/Internet.nl-API-docs) | Documentatie voor de batch API (v2) | [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) |
+| [toolbox-wiki](https://github.com/internetstandards/toolbox-wiki) | Implementatiegidsen per standaard en platform | [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) |
 
 ## Handige commando's voor repo-exploratie
 

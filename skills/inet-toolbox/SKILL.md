@@ -388,7 +388,7 @@ ping6 example.nl
 
 | Repository | Beschrijving | Licentie |
 |-----------|-------------|--------|
-| [toolbox-wiki](https://github.com/internetstandards/toolbox-wiki) | Implementatiegidsen (bronmateriaal) | Niet gespecificeerd |
+| [toolbox-wiki](https://github.com/internetstandards/toolbox-wiki) | Implementatiegidsen (bronmateriaal) | [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) |
 | [Internet.nl](https://github.com/internetstandards/Internet.nl) | Testsuite om resultaat te controleren | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 
 ## Veelvoorkomende problemen
