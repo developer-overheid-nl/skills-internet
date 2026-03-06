@@ -386,7 +386,7 @@ regelmatig te scannen en trends bij te houden.
 | Repository | Beschrijving | Licentie |
 |-----------|-------------|--------|
 | [Internet.nl-API-docs](https://github.com/internetstandards/Internet.nl-API-docs) | Officieel API-documentatie | [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/legalcode.en) |
-| [Internet.nl](https://github.com/internetstandards/Internet.nl) | Testsuite broncode | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [Internet.nl](https://github.com/internetstandards/Internet.nl) | Testsuite broncode | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) (code), [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/legalcode.en) (vertalingen) |
 
 ## Veelvoorkomende problemen
 
