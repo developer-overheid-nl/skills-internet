@@ -113,6 +113,15 @@ def normalize_html(html: str) -> str:
         html,
         flags=re.DOTALL,
     )
+    # Liferay CMS: Sharing script blok met p_p_auth tokens (verschijnt intermittent)
+    html = re.sub(
+        r"<script[^>]*>\s*\(function\(\)\s*\{var \$ = AUI\.\$.*?Liferay\.Sharing\s*=\s*Sharing;\s*\}\)\(\);\s*</script>",
+        "",
+        html,
+        flags=re.DOTALL,
+    )
+    # Liferay CMS: p_p_auth tokens in URLs (variëren per request/server)
+    html = re.sub(r"p_p_auth=[A-Za-z0-9_-]+", "p_p_auth=TOKEN", html)
     return html
 
 
