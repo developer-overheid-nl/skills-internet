@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.5](https://github.com/developer-overheid-nl/skills-internet/compare/v0.1.4...v0.1.5) (2026-03-07)
+
+
+### Opgelost
+
+* normalize_html strip Liferay Sharing script blok ([#46](https://github.com/developer-overheid-nl/skills-internet/issues/46)) ([2d0ee3a](https://github.com/developer-overheid-nl/skills-internet/commit/2d0ee3afa8329666b6633594008a5789ccb2ddf1))
+* point release-please at .plugin/plugin.json source of truth ([#44](https://github.com/developer-overheid-nl/skills-internet/issues/44)) ([6ef1ea7](https://github.com/developer-overheid-nl/skills-internet/commit/6ef1ea77b30eae6c2e3c665c90ec5897cccc3aea))
+
 ## [0.1.4](https://github.com/developer-overheid-nl/skills-internet/compare/v0.1.3...v0.1.4) (2026-02-26)
 
 
