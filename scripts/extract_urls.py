@@ -30,6 +30,7 @@ EXCLUDE_PATTERNS = [
     re.compile(r"https?://www\.w3\.org/"),
     re.compile(r"https?://your-domain\.nl"),
     re.compile(r"https?://mijn-organisatie\.nl"),
+    re.compile(r"https?://[^/]+/.*example\.(com|nl|org)"),
 ]
 
 # Markdown-extractie regex: vindt alle URLs in tekst
