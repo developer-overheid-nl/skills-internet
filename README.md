@@ -5,6 +5,8 @@
 
 [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin voor moderne internetstandaarden. Test en implementeer compliance met standaarden die getest worden via [internet.nl](https://internet.nl): webstandaarden, mailstandaarden, de batch API en implementatiegidsen.
 
+> **CONCEPT** — Deze plugin is in ontwikkeling en is geen officieel product van internet.nl. De officiële standaarden zijn altijd leidend. Zie de [verantwoording](https://github.com/developer-overheid-nl/skills-marketplace/blob/main/docs/verantwoording.md) en [disclaimer](https://github.com/developer-overheid-nl/skills-marketplace/blob/main/DISCLAIMER.md) voor meer informatie.
+
 ## Installeren
 
 ```bash
