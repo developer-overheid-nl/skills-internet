@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.6](https://github.com/developer-overheid-nl/skills-internet/compare/v0.1.5...v0.1.6) (2026-03-11)
+
+
+### Opgelost
+
+* exclude example.nl URLs in path components from monitoring ([#49](https://github.com/developer-overheid-nl/skills-internet/issues/49)) ([92b0359](https://github.com/developer-overheid-nl/skills-internet/commit/92b0359050caf8444e80c1be7f4ee6107063a34a))
+
 ## [0.1.5](https://github.com/developer-overheid-nl/skills-internet/compare/v0.1.4...v0.1.5) (2026-03-07)
 
 
