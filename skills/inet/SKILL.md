@@ -126,3 +126,7 @@ gh api repos/internetstandards/Internet.nl-API-docs/git/trees/main?recursive=1 \
 - [internet.nl/test-mail](https://internet.nl/test-mail/) - E-mail testen
 - [Forum Standaardisatie - Open standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
 - [NCSC - Cybersecurity thema's](https://www.ncsc.nl/cybersecurity-themas)
+
+---
+
+> **CONCEPT** — Deze skill is in ontwikkeling en is geen officieel product. De officiële standaarden zijn altijd leidend. Zie de [verantwoording](https://github.com/developer-overheid-nl/skills-marketplace/blob/main/docs/verantwoording.md) en [disclaimer](https://github.com/developer-overheid-nl/skills-marketplace/blob/main/DISCLAIMER.md) voor meer informatie.
