@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.7](https://github.com/developer-overheid-nl/skills-internet/compare/v0.1.6...v0.1.7) (2026-03-12)
+
+
+### Opgelost
+
+* strip Sharing IIFE ook wanneer ingebed in groter script blok ([#54](https://github.com/developer-overheid-nl/skills-internet/issues/54)) ([0dc2669](https://github.com/developer-overheid-nl/skills-internet/commit/0dc26693b69f330477aaf74ce24e9b1b1fd3668e))
+
 ## [0.1.6](https://github.com/developer-overheid-nl/skills-internet/compare/v0.1.5...v0.1.6) (2026-03-11)
 
 
