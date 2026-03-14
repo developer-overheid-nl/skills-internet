@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.8](https://github.com/developer-overheid-nl/skills-internet/compare/v0.1.7...v0.1.8) (2026-03-14)
+
+
+### Opgelost
+
+* verbreed Liferay AUI IIFE normalisatie ([#59](https://github.com/developer-overheid-nl/skills-internet/issues/59)) ([c62e896](https://github.com/developer-overheid-nl/skills-internet/commit/c62e896d2be7e74caa4efd70fb8e9cf8b72ad746))
+
 ## [0.1.7](https://github.com/developer-overheid-nl/skills-internet/compare/v0.1.6...v0.1.7) (2026-03-12)
 
 
