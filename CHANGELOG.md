@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.9](https://github.com/developer-overheid-nl/skills-internet/compare/v0.1.8...v0.1.9) (2026-03-15)
+
+
+### Opgelost
+
+* normaliseer opeenvolgende lege regels in normalize_html ([#61](https://github.com/developer-overheid-nl/skills-internet/issues/61)) ([89372d0](https://github.com/developer-overheid-nl/skills-internet/commit/89372d02393385f820d50db6555aed73dee9cff1))
+
 ## [0.1.8](https://github.com/developer-overheid-nl/skills-internet/compare/v0.1.7...v0.1.8) (2026-03-14)
 
 
