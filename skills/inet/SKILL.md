@@ -61,6 +61,7 @@ De standaarden staan op de
 | Security headers | Getest door internet.nl (geen Forum status) | CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy |
 | security.txt | Verplicht (pas-toe-of-leg-uit) | Contactinformatie voor beveiligingsonderzoekers (RFC 9116) |
 | RPKI | Verplicht (pas-toe-of-leg-uit) | Route Origin Validation, beschermt BGP-routing |
+| ACME | Verplicht (pas-toe-of-leg-uit) | Automated Certificate Management Environment (RFC 8555), automatisch aanvragen en vernieuwen van TLS-certificaten |
 
 ### Mailstandaarden
 
