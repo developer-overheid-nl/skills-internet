@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/developer-overheid-nl/skills-internet/compare/v0.1.9...v0.2.0) (2026-03-27)
+
+
+### Toegevoegd
+
+* voeg ACME (RFC 8555) toe aan webstandaarden overzicht ([#99](https://github.com/developer-overheid-nl/skills-internet/issues/99)) ([fd370b7](https://github.com/developer-overheid-nl/skills-internet/commit/fd370b793fde00076997ee5b2b5aa00249eee378))
+
+
+### Opgelost
+
+* strip Drupal /uploads/ aggregatie in normalize_html ([#116](https://github.com/developer-overheid-nl/skills-internet/issues/116)) ([b39f22c](https://github.com/developer-overheid-nl/skills-internet/commit/b39f22cdf8c2fa86c07ef1e892c1779ed9bf7c29))
+
 ## [0.1.9](https://github.com/developer-overheid-nl/skills-internet/compare/v0.1.8...v0.1.9) (2026-03-15)
 
 
