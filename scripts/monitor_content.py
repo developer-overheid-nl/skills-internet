@@ -156,6 +156,8 @@ def normalize_html(html: str) -> str:
     )
     # Liferay CMS: p_p_auth tokens in URLs (variëren per request/server)
     html = re.sub(r"p_p_auth=[A-Za-z0-9_-]+", "p_p_auth=TOKEN", html)
+    # Apache directory listings: timestamps variëren bij server-deployments
+    html = re.sub(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}\s+", "", html)
     # Normaliseer opeenvolgende lege regels (variëren tussen requests bij sommige CMS'en)
     html = re.sub(r"\n{3,}", "\n\n", html)
     return html
