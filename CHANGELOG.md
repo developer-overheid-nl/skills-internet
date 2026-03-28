@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.0...v0.2.1) (2026-03-28)
+
+
+### Opgelost
+
+* normalize_html Apache directory listing timestamps ([#118](https://github.com/developer-overheid-nl/skills-internet/issues/118)) ([684ff57](https://github.com/developer-overheid-nl/skills-internet/commit/684ff573edf538c30d7cc4e5202750f54df89a81))
+
 ## [0.2.0](https://github.com/developer-overheid-nl/skills-internet/compare/v0.1.9...v0.2.0) (2026-03-27)
 
 
