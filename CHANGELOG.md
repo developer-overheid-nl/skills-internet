@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.1...v0.2.2) (2026-03-31)
+
+
+### Opgelost
+
+* strip Liferay importmap script blokken in normalize_html() ([#122](https://github.com/developer-overheid-nl/skills-internet/issues/122)) ([16ea22e](https://github.com/developer-overheid-nl/skills-internet/commit/16ea22ee9358ddaf482c7df5a5b8a294e37fe7fc))
+
 ## [0.2.1](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.0...v0.2.1) (2026-03-28)
 
 
