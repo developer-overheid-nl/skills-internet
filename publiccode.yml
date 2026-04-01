@@ -1,49 +1,66 @@
-publiccodeYmlVersion: '0.2'
-categories:
-  - it-development
+publiccodeYmlVersion: "0.5"
+
+name: Internet.nl Claude Code Plugin
+url: https://github.com/developer-overheid-nl/skills-internet
+softwareType: addon
+developmentStatus: development
+
+platforms:
+  - linux
+  - mac
+  - windows
+
 description:
   nl:
+    shortDescription: >-
+      Claude Code plugin voor internet.nl standaarden
+    longDescription: |
+      Claude Code plugin voor het testen en implementeren van moderne
+      internetstandaarden conform internet.nl. Bevat skills voor
+      webstandaarden, mailstandaarden, de batch API en implementatiegidsen
+      uit de toolbox-wiki. Alle standaarden staan op de
+      'pas-toe-of-leg-uit'-lijst van het Forum Standaardisatie.
     features:
       - 5 skills voor internetstandaarden compliance
       - Webstandaarden (HTTPS, TLS, DNSSEC, IPv6, RPKI, security headers)
       - Mailstandaarden (DMARC, DKIM, SPF, STARTTLS, DANE)
       - Batch API voor bulk compliance scans
       - Stap-voor-stap implementatiegidsen
-    genericName: Claude Code plugin
-    longDescription: >
-      Claude Code plugin voor het testen en implementeren van moderne
-      internetstandaarden conform internet.nl. Bevat skills voor webstandaarden,
-      mailstandaarden, de batch API en implementatiegidsen uit de toolbox-wiki.
-      Alle standaarden staan op de 'pas-toe-of-leg-uit'-lijst van het Forum
-      Standaardisatie.
-    shortDescription: Claude Code plugin voor internet.nl standaarden
+
   en:
+    shortDescription: >-
+      Claude Code plugin for internet.nl standards
+    longDescription: |
+      Claude Code plugin for testing and implementing modern internet
+      standards as tested by internet.nl. Contains skills for web standards,
+      mail standards, the batch API, and implementation guides from the
+      toolbox wiki. All standards are on the Dutch government mandatory
+      standards list by Forum Standaardisatie.
     features:
       - 5 skills for internet standards compliance
       - Web standards (HTTPS, TLS, DNSSEC, IPv6, RPKI, security headers)
       - Mail standards (DMARC, DKIM, SPF, STARTTLS, DANE)
       - Batch API for bulk compliance scans
       - Step-by-step implementation guides
-    genericName: Claude Code plugin
-    longDescription: >
-      Claude Code plugin for testing and implementing modern internet standards
-      as tested by internet.nl. Contains skills for web standards, mail
-      standards, the batch API, and implementation guides from the toolbox wiki.
-    shortDescription: Claude Code plugin for internet.nl standards
-developmentStatus: development
+
 legal:
   license: EUPL-1.2
+  mainCopyrightOwner: Geonovum
+
+intendedAudience:
+  countries:
+    - NL
+  scope:
+    - government
+
 localisation:
   availableLanguages:
     - nl
     - en
   localisationReady: false
+
 maintenance:
-  contacts:
-    - name: developer-overheid-nl
   type: community
-name: skills-internet
-releaseDate: '2026-02-22'
-softwareVersion: 0.1.9
-softwareType: standalone/other
-url: https://github.com/developer-overheid-nl/skills-internet
+  contacts:
+    - name: Team developer.overheid.nl
+      email: developer.overheid@geonovum.nl
