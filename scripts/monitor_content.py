@@ -96,6 +96,25 @@ def normalize_html(html: str) -> str:
     html = re.sub(r"js-view-dom-id-[a-f0-9]+", "js-view-dom-id-HASH", html)
     # Drupal CMS: permissionsHash (verandert bij module/permissie updates)
     html = re.sub(r'"permissionsHash":"[a-f0-9]+"', '"permissionsHash":"HASH"', html)
+    # Drupal CMS: aggregatie filenames via /uploads/ pad (alternatief voor /sites/default/files/)
+    html = re.sub(
+        r"/uploads/css/css_[A-Za-z0-9_-]+\.css",
+        "/uploads/css/css_HASH.css",
+        html,
+    )
+    html = re.sub(
+        r"/uploads/js/js_[A-Za-z0-9_-]+\.js",
+        "/uploads/js/js_HASH.js",
+        html,
+    )
+    # Drupal CMS: ajaxPageState.libraries (base64-encoded library list, verandert bij cache rebuild)
+    html = re.sub(
+        r'"libraries":"[A-Za-z0-9+/=_-]+"',
+        '"libraries":"HASH"',
+        html,
+    )
+    # Drupal CMS: form_action CSRF tokens in ajaxTrustedUrl (veranderen bij cache rebuild)
+    html = re.sub(r"form_action_[A-Za-z0-9_-]+", "form_action_HASH", html)
     # Next.js RSC streaming: inline data scripts veranderen chunking per request
     html = re.sub(r"<script\s*>self\.__next_f\.push\([^<]*\)</script>", "", html)
     # Sentry tracing: trace-id en baggage veranderen per request
@@ -135,8 +154,17 @@ def normalize_html(html: str) -> str:
         html,
         flags=re.DOTALL,
     )
+    # Liferay CMS: importmap script blokken (key-volgorde varieert per backend server)
+    html = re.sub(
+        r'<script\s+type="importmap">\s*\{.*?\}\s*</script>',
+        "",
+        html,
+        flags=re.DOTALL,
+    )
     # Liferay CMS: p_p_auth tokens in URLs (variëren per request/server)
     html = re.sub(r"p_p_auth=[A-Za-z0-9_-]+", "p_p_auth=TOKEN", html)
+    # Apache directory listings: timestamps variëren bij server-deployments
+    html = re.sub(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}\s+", "", html)
     # Normaliseer opeenvolgende lege regels (variëren tussen requests bij sommige CMS'en)
     html = re.sub(r"\n{3,}", "\n\n", html)
     return html

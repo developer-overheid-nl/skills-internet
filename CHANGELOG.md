@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.2.2](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.1...v0.2.2) (2026-03-31)
+
+
+### Opgelost
+
+* strip Liferay importmap script blokken in normalize_html() ([#122](https://github.com/developer-overheid-nl/skills-internet/issues/122)) ([16ea22e](https://github.com/developer-overheid-nl/skills-internet/commit/16ea22ee9358ddaf482c7df5a5b8a294e37fe7fc))
+
+## [0.2.1](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.0...v0.2.1) (2026-03-28)
+
+
+### Opgelost
+
+* normalize_html Apache directory listing timestamps ([#118](https://github.com/developer-overheid-nl/skills-internet/issues/118)) ([684ff57](https://github.com/developer-overheid-nl/skills-internet/commit/684ff573edf538c30d7cc4e5202750f54df89a81))
+
+## [0.2.0](https://github.com/developer-overheid-nl/skills-internet/compare/v0.1.9...v0.2.0) (2026-03-27)
+
+
+### Toegevoegd
+
+* voeg ACME (RFC 8555) toe aan webstandaarden overzicht ([#99](https://github.com/developer-overheid-nl/skills-internet/issues/99)) ([fd370b7](https://github.com/developer-overheid-nl/skills-internet/commit/fd370b793fde00076997ee5b2b5aa00249eee378))
+
+
+### Opgelost
+
+* strip Drupal /uploads/ aggregatie in normalize_html ([#116](https://github.com/developer-overheid-nl/skills-internet/issues/116)) ([b39f22c](https://github.com/developer-overheid-nl/skills-internet/commit/b39f22cdf8c2fa86c07ef1e892c1779ed9bf7c29))
+
 ## [0.1.9](https://github.com/developer-overheid-nl/skills-internet/compare/v0.1.8...v0.1.9) (2026-03-15)
 
 
