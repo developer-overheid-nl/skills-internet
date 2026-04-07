@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.2...v0.2.3) (2026-04-07)
+
+
+### Opgelost
+
+* vervang normalize_html() door extract_visible_text() ([#129](https://github.com/developer-overheid-nl/skills-internet/issues/129)) ([1fb2b5e](https://github.com/developer-overheid-nl/skills-internet/commit/1fb2b5e8b7219ea79918c995ffc964e424719b2a))
+
 ## [0.2.2](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.1...v0.2.2) (2026-03-31)
 
 
