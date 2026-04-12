@@ -37,7 +37,7 @@ Voor TLS 1.3 zijn alleen deze cipher suites beschikbaar (allemaal goed):
 - Geldige keten naar een vertrouwde root CA
 - Hostnaam in Subject Alternative Name (SAN)
 Bronnen:
-- [NCSC - TLS-richtlijnen](https://www.ncsc.nl/en/transport-layer-security-tls/it-security-guidelines-transport-layer-security-tls)
+- [NCSC - TLS-richtlijnen](https://www.ncsc.nl/transport-layer-security-tls/v21-tls)
 - [Forum Standaardisatie - TLS](https://www.forumstandaardisatie.nl/open-standaarden/tls)
 
 ## DNSSEC protocol-details
