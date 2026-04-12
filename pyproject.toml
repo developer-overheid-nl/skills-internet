@@ -3,7 +3,7 @@ name = "skills-internet"
 version = "0.2.3"
 description = "Internet.nl Claude Code Plugin - Test en implementeer moderne internetstandaarden"
 requires-python = ">=3.12"
-dependencies = ["requests>=2.31.0"]
+dependencies = ["requests>=2.33.1"]
 
 [dependency-groups]
 dev = ["pytest>=8.0", "responses>=0.25"]
