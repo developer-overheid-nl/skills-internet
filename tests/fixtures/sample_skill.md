@@ -15,7 +15,7 @@ model: sonnet
 
 - Internet.nl: https://internet.nl/test-site
 - Forum: https://www.forumstandaardisatie.nl/open-standaarden/ipv6-en-dnssec
-- NCSC: https://www.ncsc.nl/en/transport-layer-security-tls/it-security-guidelines-transport-layer-security-tls
+- NCSC: https://www.ncsc.nl/en/transport-layer-security/ICT-beveiligingsrichtlijnen-voor-TLS
 
 ## Voorbeelden
 
