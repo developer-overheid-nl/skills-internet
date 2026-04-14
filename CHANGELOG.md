@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.4](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.3...v0.2.4) (2026-04-14)
+
+
+### Opgelost
+
+* update NCSC TLS-richtlijnen URL naar v21-tls ([#153](https://github.com/developer-overheid-nl/skills-internet/issues/153)) ([89d2507](https://github.com/developer-overheid-nl/skills-internet/commit/89d2507b3885639a1ab192108bb33d616e1d218c))
+
 ## [0.2.3](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.2...v0.2.3) (2026-04-07)
 
 
