@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.5](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.4...v0.2.5) (2026-04-20)
+
+
+### Opgelost
+
+* bump pygments 2.19.2 -&gt; 2.20.0 (GHSA-5239-wwwm-4pmq) ([#162](https://github.com/developer-overheid-nl/skills-internet/issues/162)) ([c3168a9](https://github.com/developer-overheid-nl/skills-internet/commit/c3168a93481bca490cfc328432db54a66289cefb))
+
 ## [0.2.4](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.3...v0.2.4) (2026-04-14)
 
 
