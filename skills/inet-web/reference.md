@@ -36,6 +36,16 @@ Voor TLS 1.3 zijn alleen deze cipher suites beschikbaar (allemaal goed):
 - SHA-256 of hoger als hash-algoritme
 - Geldige keten naar een vertrouwde root CA
 - Hostnaam in Subject Alternative Name (SAN)
+
+### Renegotiation en OCSP (NCSC 2025-05)
+
+Met de NCSC TLS-richtlijnen van mei 2025 (geïmplementeerd in Internet.nl v1.11.0):
+
+- **Client-initiated renegotiation** is acceptabel mits de server het aantal renegotiations beperkt tot minder dan 10 per verbinding. Onbeperkte client renegotiation blijft een fout (DoS-risico).
+- **Secure renegotiation** (RFC 5746) blijft verplicht.
+- **Extended Master Secret** (RFC 7627) is een aparte test geworden voor TLS 1.2; ontbreken telt als fout. Voor TLS 1.3 niet van toepassing.
+- **OCSP stapling** wordt niet langer als fout gerekend wanneer het certificaat zelf geen OCSP-endpoint bevat (`AIA` zonder OCSP URI). In dat geval is stapling technisch onmogelijk en wordt het als niet-getest gemeld.
+
 Bronnen:
 - [NCSC - TLS Security Guidelines](https://www.ncsc.nl/en/transport-layer-security/ICT-beveiligingsrichtlijnen-voor-TLS)
 - [Forum Standaardisatie - TLS](https://www.forumstandaardisatie.nl/open-standaarden/tls)
