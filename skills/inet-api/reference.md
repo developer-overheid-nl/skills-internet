@@ -378,8 +378,23 @@ class InternetNLClient:
         logger.info("Resultaten opgeslagen in %s", output_path)
 ```
 
+## TLS-velddetails sinds v1.11.0 (API v2.7.0)
+
+De v1.11.0 release (NCSC TLS-richtlijnen 2025-05) wijzigt enkele TLS-velden in de batch-resultaten:
+
+| Veld | Wijziging |
+|------|-----------|
+| `web_tls_clientreneg` / `mail_tls_clientreneg` | Status was boolean, is nu een enum: `not_allowed` (good), `allowed_with_low_limit` (info, < 10 renegotiations), `allowed_with_too_high_limit` (failed) |
+| `web_tls_ocsp` / `mail_tls_ocsp` | Nieuwe status `not_in_cert` (not_tested) wanneer het certificaat geen OCSP-endpoint bevat; stapling is dan technisch onmogelijk en wordt niet als fout gerekend |
+| `web_tls_extended_master_secret` / `mail_tls_extended_master_secret` | Nieuw veld (RFC 7627). Statussen: `supported` (good), `not_supported` (failed), `na_no_tls_1_2` (good, alleen TLS 1.3 onderhandeld), `unknown` (not_tested) |
+| `web_tls_cipher_order` | Status `not_prescribed` en `not_seclevel` zijn vervallen; verkeerde voorkeur of geen voorkeur is nu allebei `bad` |
+| `cert_signature_phase_out` | Nieuw veld in TLS-details, naast bestaande `cert_signature_bad`. Lijst met certificaat-signature-algoritmes op phase-out niveau (warning) |
+
+Een client die `clientreneg` als boolean parseert, breekt op v2.7.0. Pas de parser aan op string-enum.
+
 ## Bronnen
 
 - [Internet.nl-API-docs](https://github.com/internetstandards/Internet.nl-API-docs) - Officieel API-documentatie
 - [Internet.nl](https://github.com/internetstandards/Internet.nl) - Testsuite broncode
 - [internet.nl](https://internet.nl) - Website en API-registratie
+- [Internet.nl v1.11.0 release notes](https://github.com/internetstandards/Internet.nl/releases/tag/v1.11.0)
