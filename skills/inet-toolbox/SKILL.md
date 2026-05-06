@@ -1,12 +1,6 @@
 ---
 name: inet-toolbox
-description: >-
-  Stap-voor-stap implementatiegidsen uit de internet.nl toolbox-wiki.
-  Configuratie van DNSSEC, HTTPS/TLS, DMARC, DKIM, SPF, DANE en IPv6
-  op veelgebruikte platformen (BIND, NSD, Nginx, Apache, Postfix).
-  Triggers: internet.nl toolbox, DMARC configuratie, DKIM instellen,
-  SPF record, DANE opzetten, implementatiegids, DNSSEC instellen,
-  Let's Encrypt, certificaat, mailserver configureren
+description: "Implementatiegidsen uit de internet.nl toolbox-wiki: DNSSEC, HTTPS/TLS, DMARC, DKIM, SPF, DANE, IPv6 op BIND, NSD, Nginx, Apache, Postfix. Let's Encrypt."
 model: sonnet
 allowed-tools:
   - Bash(gh api *)
