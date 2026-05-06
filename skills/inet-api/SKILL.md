@@ -1,12 +1,6 @@
 ---
 name: inet-api
-description: >-
-  Internet.nl batch API voor het geautomatiseerd testen van meerdere
-  domeinen op internetstandaarden. Authenticatie, batch requests,
-  polling, resultaten JSON, dashboard-integratie.
-  Triggers: internet.nl API, batch API, bulk scan, compliance dashboard,
-  internet.nl batch, API credentials, geautomatiseerd testen,
-  domeinenscan, monitoring dashboard
+description: "Internet.nl batch API voor geautomatiseerd testen van meerdere domeinen: authenticatie, polling, JSON-resultaten, dashboard-integratie, bulk scans."
 model: sonnet
 allowed-tools:
   - Bash(gh api *)

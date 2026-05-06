@@ -49,7 +49,7 @@ Achtergrondkennis die niet direct nodig is voor configuratie-generatie wordt ver
 - Exploratie commando's (`dig`, `openssl`, `gh api`)
 
 ### Description triggers
-Descriptions bevatten zowel Nederlandse als technische Engelse triggerwoorden zodat de skill bij relevante vragen wordt geactiveerd.
+Descriptions bevatten zowel Nederlandse als technische Engelse triggerwoorden zodat de skill bij relevante vragen wordt geactiveerd. Houd descriptions kort: doel **~150 chars, max 200**. Eén functionele zin met de eigennamen die mensen daadwerkelijk gebruiken (DMARC, DNSSEC, security.txt) is genoeg; voeg alleen een korte triggerstaart toe voor termen die niet uit de hoofdzin volgen. Geen "Triggers:"-staarten die de hoofdzin dupliceren — die vreten skill listing budget op zonder triggerwaarde toe te voegen.
 
 ### Allowed tools
 Standaard set:

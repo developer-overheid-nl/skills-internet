@@ -1,11 +1,6 @@
 ---
 name: inet
-description: >-
-  Overzicht van alle internetstandaarden die internet.nl test.
-  Routing naar sub-skills voor web, mail, API en toolbox.
-  Triggers: internet.nl, internet standaarden, website compliance,
-  mail compliance, internetstandaarden, open standaarden,
-  Forum Standaardisatie, pas-toe-of-leg-uit
+description: "Internetstandaarden getest door internet.nl. Routeert naar sub-skills voor web, mail, API en toolbox. Forum Standaardisatie pas-toe-of-leg-uit."
 model: sonnet
 allowed-tools:
   - Bash(gh api *)

@@ -1,12 +1,6 @@
 ---
 name: inet-mail
-description: >-
-  Mailstandaarden getest door internet.nl: SPF (Sender Policy Framework),
-  DKIM (DomainKeys Identified Mail), DMARC (Domain-based Message Authentication),
-  STARTTLS, DANE (DNS-based Authentication of Named Entities).
-  Triggers: mail test, DMARC, DKIM, SPF, STARTTLS, DANE,
-  mailserver beveiliging, email security, e-mailbeveiliging,
-  mailstandaarden, anti-spoofing
+description: "Mailstandaarden van internet.nl: SPF, DKIM, DMARC, STARTTLS, DANE. Anti-spoofing, mailserver-beveiliging, e-mailbeveiliging."
 model: sonnet
 allowed-tools:
   - Bash(gh api *)
