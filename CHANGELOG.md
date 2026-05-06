@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.6](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.5...v0.2.6) (2026-05-06)
+
+
+### Opgelost
+
+* kort skill descriptions in om listing budget te ontlasten ([#170](https://github.com/developer-overheid-nl/skills-internet/issues/170)) ([b54ee01](https://github.com/developer-overheid-nl/skills-internet/commit/b54ee0182d7aca5a5372fa6cb242f01ea6f90754))
+
 ## [0.2.5](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.4...v0.2.5) (2026-04-20)
 
 
