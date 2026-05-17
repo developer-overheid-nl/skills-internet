@@ -1,0 +1,124 @@
+name: Audit-zichtbaarheid
+
+# Niet-blokkerend. Als een PR een SKILL.md of reference.md raakt en de
+# bijbehorende audit.md bevat UNSUPPORTED_ASSERTION (mogelijke hallucinatie)
+# of CONTRADICTED (bron spreekt de claim tegen), zet deze workflow een label
+# en plaatst een sticky comment met de geflagde claims. De check faalt nooit:
+# het doel is de bevinding in het PR-gesprek krijgen, niet merges tegenhouden.
+# Verscherpen naar blocking kan later, als de false-positive-ratio bekend is.
+
+# pull_request_target i.p.v. pull_request: anders heeft een PR van een externe
+# fork (zoals #232) een read-only token en kan de workflow geen label/comment
+# zetten. We checken expliciet de PR-head uit en lezen alleen audit.md +
+# git-diff (geen uitvoering van PR-code), dus de write-token is hier veilig.
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'skills/**/SKILL.md'
+      - 'skills/**/reference.md'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  audit-visibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Verzamel geflagde claims uit gewijzigde skills
+        id: scan
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          # Gewijzigde bestanden via de PR-files-API (betrouwbaar onder
+          # pull_request_target; geen merge-base nodig die --depth kan breken).
+          changed=$(gh pr view "$PR_NUMBER" --json files \
+            --jq '.files[].path' \
+            | grep -E 'skills/.*/(SKILL|reference)\.md$' || true)
+
+          # Unieke skill-directories van de gewijzigde bestanden
+          skill_dirs=$(echo "$changed" | sed -E 's#/(SKILL|reference)\.md$##' \
+            | sort -u | grep . || true)
+
+          report=""
+          for d in $skill_dirs; do
+            audit="$d/audit.md"
+            [ -f "$audit" ] || continue
+            # Pak de secties UNSUPPORTED_ASSERTION en CONTRADICTED tot aan de
+            # volgende '## ' kop. report.py schrijft deze koppen altijd zo.
+            flagged=$(awk '
+              /^## (UNSUPPORTED_ASSERTION|CONTRADICTED)/ {grab=1; print; next}
+              /^## / {grab=0}
+              grab {print}
+            ' "$audit")
+            if [ -n "$flagged" ]; then
+              report="${report}
+### \`${d#skills/}\`
+
+${flagged}
+"
+            fi
+          done
+
+          if [ -n "$report" ]; then
+            {
+              echo "found=true"
+              echo "body<<AUDIT_EOF"
+              echo "🔎 **Audit-zichtbaarheid** — deze PR raakt skills met claims die de audit-pipeline markeerde."
+              echo ""
+              echo "**UNSUPPORTED_ASSERTION** = stellige bewering zonder enige bronsteun (mogelijke hallucinatie)."
+              echo "**CONTRADICTED** = een bron spreekt de claim expliciet tegen."
+              echo ""
+              echo "Dit blokkeert de merge niet, maar controleer deze claims voordat je merget:"
+              echo "$report"
+              echo ""
+              echo "_Regenereer \`audit.md\` met de audit-tooling als je de skill aanpast._"
+              echo "AUDIT_EOF"
+            } >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Label en comment
+        if: steps.scan.outputs.found == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = process.env.AUDIT_BODY;
+            const marker = '<!-- audit-visibility -->';
+            const { owner, repo } = context.repo;
+            const issue_number = context.issue.number;
+
+            try {
+              await github.rest.issues.addLabels({
+                owner, repo, issue_number, labels: ['audit-flagged'],
+              });
+            } catch (e) {
+              core.info(`Label kon niet worden gezet: ${e.message}`);
+            }
+
+            const comments = await github.paginate(
+              github.rest.issues.listComments,
+              { owner, repo, issue_number },
+            );
+            const existing = comments.find(c => c.body && c.body.includes(marker));
+            const fullBody = `${marker}\n${body}`;
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner, repo, comment_id: existing.id, body: fullBody,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner, repo, issue_number, body: fullBody,
+              });
+            }
+        env:
+          AUDIT_BODY: ${{ steps.scan.outputs.body }}
