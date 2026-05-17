@@ -7,457 +7,451 @@
 
 | Status | Aantal | % |
 |--------|--------|---|
-| UNSUPPORTED_ASSERTION | 12 | 31% |
+| UNSUPPORTED_ASSERTION | 11 | 29% |
 | CONTRADICTED | 0 | 0% |
-| PARTIALLY_GROUNDED | 1 | 3% |
-| UNGROUNDED | 25 | 64% |
+| PARTIALLY_GROUNDED | 0 | 0% |
+| UNGROUNDED | 26 | 68% |
 | NO_SOURCE | 0 | 0% |
 | UNVERIFIABLE | 0 | 0% |
 | KNOWN_DISCREPANCY | 0 | 0% |
 | GROUNDED | 1 | 3% |
 
-*Geverifieerd met sonnet, 2 calls, $0.2221.*
+*Geverifieerd met sonnet, 2 calls, $0.2159.*
 
-## UNSUPPORTED_ASSERTION — stellige bewering zonder enige bronsteun (mogelijke hallucinatie) (12)
+## UNSUPPORTED_ASSERTION — stellige bewering zonder enige bronsteun (mogelijke hallucinatie) (11)
 
-### `inet-toolbox-0002` — SKILL.md:46 *(§ 1. DNSSEC instellen)*
+### `inet-toolbox-0001` — SKILL.md:46 *(§ 1. DNSSEC instellen)*
 
 > DNSSEC beveiligt DNS-antwoorden met cryptografische handtekeningen.
 
 **Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** DNSSEC
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *De bron bevat geen technische uitleg over DNSSEC of cryptografische handtekeningen.*
+  - *De brontekst is uitsluitend een lijst van 3133 domeinen die 100% scoren op de Hall of Fame van internet.nl. Er staat geen technische uitleg over DNSSEC, DANE, SPF, DMARC of andere protocollen.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *De brontekst (alleen de README/landingspagina van de repo) bevat geen inhoudelijke uitleg over DNSSEC of cryptografische handtekeningen.*
+  - *De brontekst is de README/landingspagina van de toolbox-wiki GitHub repository. Deze bevat geen technische uitleg over DNSSEC of cryptografische handtekeningen.*
 
-### `inet-toolbox-0003` — SKILL.md:64 *(§ 1. DNSSEC instellen)*
+### `inet-toolbox-0008` — SKILL.md:218 *(§ 3. DMARC gefaseerd uitrollen)*
 
-> Voor BIND 9 DNSSEC worden twee sleutels gegenereerd: een KSK (Key Signing Key) en een ZSK (Zone Signing Key) met algoritme ECDSAP256SHA256.
+> DMARC fase 1 (monitor) gebruikt `p=none` met een `rua`-adres voor rapportages zonder impact op mailbezorging.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** DNSSEC / BIND 9
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** DMARC
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over BIND 9, KSK, ZSK of ECDSAP256SHA256 in de brontekst.*
+  - *Bron bevat geen technische informatie over DMARC.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over BIND 9, KSK, ZSK of ECDSAP256SHA256 in de aangeleverde brontekst.*
+  - *Geen technische DMARC-inhoud over fasen of p=none in de aangeleverde brontekst.*
 
-### `inet-toolbox-0005` — SKILL.md:82 *(§ 1. DNSSEC instellen)*
+### `inet-toolbox-0009` — SKILL.md:224 *(§ 3. DMARC gefaseerd uitrollen)*
 
-> NSD gebruikt externe tools voor DNSSEC, zoals ldns of OpenDNSSEC.
+> DMARC fase 2 gebruikt `p=quarantine` met een `pct`-waarde die geleidelijk verhoogd wordt (10, 25, 50, 100).
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** DNSSEC / NSD
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** DMARC
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over NSD, ldns of OpenDNSSEC in de brontekst.*
+  - *Bron bevat geen technische informatie over DMARC.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over NSD, ldns of OpenDNSSEC in de aangeleverde brontekst.*
+  - *Geen technische DMARC-inhoud over p=quarantine of pct-waarden in de aangeleverde brontekst.*
 
-### `inet-toolbox-0007` — SKILL.md:158 *(§ 2. HTTPS/TLS configureren)*
+### `inet-toolbox-0010` — SKILL.md:229 *(§ 3. DMARC gefaseerd uitrollen)*
 
-> De Nginx TLS-configuratie bevat `ssl_prefer_server_ciphers off`.
+> DMARC fase 3 (streng) gebruikt `p=reject` met `adkim=s` en `aspf=s`.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** HTTPS/TLS / Nginx
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** DMARC
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over ssl_prefer_server_ciphers in de brontekst.*
+  - *Bron bevat geen technische informatie over DMARC.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over ssl_prefer_server_ciphers in de aangeleverde brontekst.*
+  - *Geen technische DMARC-inhoud over p=reject, adkim=s of aspf=s in de aangeleverde brontekst.*
 
-### `inet-toolbox-0014` — SKILL.md:265 *(§ 4. DKIM instellen)*
+### `inet-toolbox-0011` — SKILL.md:395 *(§ Veelvoorkomende problemen)*
 
-> Postfix wordt aan OpenDKIM gekoppeld via een milter op `inet:localhost:8891`.
-
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** DKIM / Postfix / OpenDKIM
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over Postfix, OpenDKIM of milter-configuratie in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over Postfix/OpenDKIM milter-configuratie in de aangeleverde brontekst.*
-
-### `inet-toolbox-0019` — SKILL.md:328 *(§ 6. DANE instellen)*
-
-> DANE TLSA-record voor SMTP heeft het formaat `_25._tcp.mx.example.nl. IN TLSA 3 1 1 <hash>`.
-
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** DANE
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over DANE TLSA-records of SMTP-formaten in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over TLSA-recordformaat in de aangeleverde brontekst.*
-
-### `inet-toolbox-0022` — SKILL.md:395 *(§ Veelvoorkomende problemen)*
-
-> SPF permerror wordt veroorzaakt door meer dan 10 DNS-lookups in het SPF-record.
+> SPF permerror treedt op wanneer er meer dan 10 DNS-lookups zijn; oplossing is `include` vervangen door `ip4`/`ip6` waar mogelijk.
 
 **Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** SPF
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over SPF permerror of DNS-lookup limieten in de brontekst.*
+  - *Bron bevat geen technische informatie over SPF.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over SPF permerror in de aangeleverde brontekst.*
+  - *Geen technische SPF-inhoud over permerror of oplossingen daarvoor in de aangeleverde brontekst.*
 
-### `inet-toolbox-0023` — SKILL.md:396 *(§ Veelvoorkomende problemen)*
+### `inet-toolbox-0013` — SKILL.md:361 *(§ 7. IPv6 inschakelen)*
 
-> DANE TLSA mismatch na certificaatvernieuwing wordt veroorzaakt door een niet-bijgewerkt TLSA-record; oplossing is SPKI (selector=1) met hergebruik privésleutel of vooraf TLSA updaten.
+> Nginx luistert op IPv4 én IPv6 wanneer `listen [::]:80` en `listen [::]:443 ssl` worden toegevoegd naast de IPv4 listen-directives.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** DANE
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** IPv6 / Nginx
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over DANE TLSA mismatch of SPKI in de brontekst.*
+  - *Bron bevat geen Nginx-configuratie-informatie.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over DANE TLSA mismatch of SPKI in de aangeleverde brontekst.*
+  - *Geen technische Nginx/IPv6-inhoud in de aangeleverde brontekst.*
 
-### `inet-toolbox-0028` — reference.md:54 *(§ DNSSEC - geavanceerde configuratie)*
+### `inet-toolbox-0021` — SKILL.md:386 *(§ Repositories)*
 
-> ECDSAP256SHA256 heeft algoritme-code 13 in DNSSEC.
+> Internet.nl code is gepubliceerd onder Apache-2.0; vertalingen onder CC-BY-4.0.
+
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Internet.nl
+
+- **SOURCE_UNAVAILABLE** (high) — [https://raw.githubusercontent.com/internetstandards/Internet.nl/main/LICENSE](https://raw.githubusercontent.com/internetstandards/Internet.nl/main/LICENSE)
+  - *Bron status: unreachable*
+- **SOURCE_UNAVAILABLE** (high) — [https://raw.githubusercontent.com/internetstandards/Internet.nl/master/LICENSE](https://raw.githubusercontent.com/internetstandards/Internet.nl/master/LICENSE)
+  - *Bron status: unreachable*
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen licentie-informatie over internet.nl code of vertalingen.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *De brontekst gaat over de toolbox-wiki repository, niet over de Internet.nl codebase zelf. Er is geen vermelding van Apache-2.0 licentie voor Internet.nl code.*
+
+### `inet-toolbox-0027` — reference.md:55 *(§ DNSSEC - geavanceerde configuratie)*
+
+> ECDSAP384SHA384 (algoritme 14) is een goed DNSSEC-algoritme: sterker maar met grotere handtekeningen.
 
 **Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** DNSSEC / algoritme-keuze
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over DNSSEC algoritme-codes in de brontekst.*
+  - *Bron bevat geen informatie over DNSSEC algoritme-keuze.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over DNSSEC algoritme-codes in de aangeleverde brontekst.*
+  - *Geen technische DNSSEC-inhoud over ECDSAP384SHA384 in de aangeleverde brontekst.*
 
-### `inet-toolbox-0029` — reference.md:56 *(§ DNSSEC - geavanceerde configuratie)*
+### `inet-toolbox-0028` — reference.md:56 *(§ DNSSEC - geavanceerde configuratie)*
 
-> ED25519 heeft algoritme-code 15 in DNSSEC.
+> ED25519 (algoritme 15) is een goed DNSSEC-algoritme: nieuwste en compact.
 
 **Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** DNSSEC / algoritme-keuze
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over ED25519 of algoritme-code 15 in de brontekst.*
+  - *Bron bevat geen informatie over DNSSEC algoritme-keuze.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over ED25519 algoritme-code in de aangeleverde brontekst.*
+  - *Geen technische DNSSEC-inhoud over ED25519 in de aangeleverde brontekst.*
 
-### `inet-toolbox-0030` — reference.md:153 *(§ E-mailbeveiliging - geavanceerde configuratie)*
+### `inet-toolbox-0029` — reference.md:57 *(§ DNSSEC - geavanceerde configuratie)*
 
-> Postfix `smtp_tls_security_level = dane` configureert uitgaand SMTP voor DANE-verificatie.
+> RSASHA256 (algoritme 8) is voldoende als DNSSEC-algoritme en breed ondersteund.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** DANE / Postfix TLS
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** DNSSEC / algoritme-keuze
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over Postfix smtp_tls_security_level in de brontekst.*
+  - *Bron bevat geen informatie over DNSSEC algoritme-keuze.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over Postfix smtp_tls_security_level in de aangeleverde brontekst.*
+  - *Geen technische DNSSEC-inhoud over RSASHA256 in de aangeleverde brontekst.*
 
-### `inet-toolbox-0039` — SKILL.md:386 *(§ Repositories)*
+### `inet-toolbox-0036` — reference.md:229 *(§ DANE - geavanceerde configuratie)*
 
-> Internet.nl testsuite is gepubliceerd onder Apache-2.0 (code) en CC-BY-4.0 (vertalingen).
+> Bij DANE rollover kunnen twee TLSA-records tegelijk gepubliceerd worden: één voor het huidige en één voor het toekomstige certificaat (pre-publish methode).
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Internet.nl / licentie
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** DANE / TLSA rollover
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *De bron vermeldt alleen versienummer v1.11.0 van internet.nl, maar geen licentie-informatie. De Hall of Fame pagina bevat geen verwijzing naar Apache-2.0 of CC-BY-4.0.*
+  - *Bron bevat geen informatie over DANE/TLSA rollover methodes.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *De brontekst gaat over de toolbox-wiki repository, niet over de Internet.nl testsuite zelf. Geen informatie over Apache-2.0 of licenties van Internet.nl code/vertalingen.*
+  - *Geen technische DANE rollover-inhoud over pre-publish methode in de aangeleverde brontekst.*
 
-## PARTIALLY_GROUNDED — bron ondersteunt deel van de claim (1)
+## UNGROUNDED — geen bron ondersteunt de claim (26)
 
-### `inet-toolbox-0001` — SKILL.md:26 *(§ Overzicht)*
-
-> De toolbox-wiki bevat implementatiegidsen voor alle standaarden die internet.nl test.
-
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** inet-toolbox skill / toolbox-wiki
-
-- **PARTIALLY_SUPPORTED** (medium) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  > Quick access: DANE how-to, DKIM how-to, SPF how-to, DMARC how-to, Parked domain how-to
-  - *De bron toont how-to's voor DANE, DKIM, SPF, DMARC en parked domains. Internet.nl test ook DNSSEC, IPv6, HTTPS/TLS en andere standaarden waarvoor geen how-to's zichtbaar zijn in deze README. De claim 'alle standaarden' is dus te sterk.*
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *De brontekst is de Hall of Fame pagina van internet.nl met een lijst van domeinen die 100% scoren. Er is geen informatie over een toolbox-wiki of implementatiegidsen.*
-
-## UNGROUNDED — geen bron ondersteunt de claim (25)
-
-### `inet-toolbox-0004` — SKILL.md:73 *(§ 1. DNSSEC instellen)*
-
-> Na het genereren van DNSSEC-sleutels in BIND 9 moet het DS-record gepubliceerd worden bij de domeinregistrar.
-
-**Type:** normative_requirement  ·  **Modaliteit:** MUST  ·  **Scope:** DNSSEC / BIND 9
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over DS-records of domeinregistrars in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over DS-records of domeinregistrars in de aangeleverde brontekst.*
-
-### `inet-toolbox-0006` — SKILL.md:155 *(§ 2. HTTPS/TLS configureren)*
-
-> De Nginx TLS-configuratie dient `ssl_protocols TLSv1.2 TLSv1.3` te gebruiken (NCSC-conform).
-
-**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** HTTPS/TLS / Nginx
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen Nginx TLS-configuratie informatie in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over Nginx TLS-configuratie in de aangeleverde brontekst.*
-
-### `inet-toolbox-0008` — SKILL.md:166 *(§ 2. HTTPS/TLS configureren)*
-
-> Nginx HSTS-header moet `max-age=31536000; includeSubDomains` bevatten.
-
-**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** HTTPS/TLS / Nginx / HSTS
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over HSTS-headers of max-age in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over Nginx HSTS-configuratie in de aangeleverde brontekst.*
-
-### `inet-toolbox-0009` — SKILL.md:197 *(§ 2. HTTPS/TLS configureren)*
-
-> Apache TLS-configuratie sluit SSLv3, TLSv1 en TLSv1.1 uit via `SSLProtocol all -SSLv3 -TLSv1 -TLSv1.1`.
-
-**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** HTTPS/TLS / Apache
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over Apache TLS-configuratie in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over Apache TLS-configuratie in de aangeleverde brontekst.*
-
-### `inet-toolbox-0010` — SKILL.md:203 *(§ 2. HTTPS/TLS configureren)*
-
-> Apache HSTS-header moet `max-age=31536000; includeSubDomains` bevatten.
-
-**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** HTTPS/TLS / Apache / HSTS
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over Apache HSTS-headers in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over Apache HSTS-configuratie in de aangeleverde brontekst.*
-
-### `inet-toolbox-0011` — SKILL.md:218 *(§ 3. DMARC gefaseerd uitrollen)*
-
-> DMARC wordt gefaseerd uitgerold: eerst p=none (monitor), dan p=quarantine met oplopende pct, dan p=reject.
-
-**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** DMARC
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over DMARC-uitrol of policies in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over DMARC-uitrolstrategie in de aangeleverde brontekst. Er is alleen een verwijzing naar DMARC-how-to.md, maar de inhoud daarvan is niet aangeleverd.*
-
-### `inet-toolbox-0012` — SKILL.md:222 *(§ 3. DMARC gefaseerd uitrollen)*
-
-> In de monitor-fase van DMARC-uitrol wordt 2 tot 4 weken gewacht om rapporten te analyseren voordat de policy wordt aangescherpt.
-
-**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** DMARC
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over DMARC monitor-fase of wachttijden in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over DMARC monitor-fase of wachttijden in de aangeleverde brontekst.*
-
-### `inet-toolbox-0013` — SKILL.md:245 *(§ 4. DKIM instellen)*
-
-> Een DKIM RSA-sleutelpaar heeft minimaal 2048 bits.
-
-**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** DKIM
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over DKIM RSA-sleutellengte in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over DKIM sleutellengte in de aangeleverde brontekst.*
-
-### `inet-toolbox-0015` — SKILL.md:298 *(§ 5. SPF-record samenstellen)*
-
-> SPF mag maximaal 10 DNS-lookups bevatten; elke `include`, `a`, `mx` en `redirect` telt als 1 lookup.
-
-**Type:** normative_requirement  ·  **Modaliteit:** MUST  ·  **Scope:** SPF
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over SPF DNS-lookup limieten in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over SPF DNS-lookup limiet in de aangeleverde brontekst.*
-
-### `inet-toolbox-0016` — SKILL.md:300 *(§ 5. SPF-record samenstellen)*
-
-> SPF-records moeten eindigen met `-all` (fail) of `~all` (softfail).
-
-**Type:** normative_requirement  ·  **Modaliteit:** MUST  ·  **Scope:** SPF
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over SPF -all of ~all in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over SPF -all of ~all in de aangeleverde brontekst.*
-
-### `inet-toolbox-0017` — SKILL.md:299 *(§ 5. SPF-record samenstellen)*
-
-> Gebruik `ip4`/`ip6` in SPF om DNS-lookups te besparen.
-
-**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** SPF
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over SPF ip4/ip6 mechanismen in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over ip4/ip6 mechanismen in SPF in de aangeleverde brontekst.*
-
-### `inet-toolbox-0018` — SKILL.md:315 *(§ 6. DANE instellen)*
+### `inet-toolbox-0002` — SKILL.md:315 *(§ 6. DANE instellen)*
 
 > DANE vereist dat DNSSEC actief is op het MX-domein.
 
 **Type:** normative_requirement  ·  **Modaliteit:** MUST  ·  **Scope:** DANE
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over DANE of DNSSEC-vereisten in de brontekst.*
+  - *Bron bevat geen technische informatie over DANE.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over DANE-vereisten of DNSSEC-afhankelijkheid in de aangeleverde brontekst.*
+  - *De brontekst vermeldt DANE als onderwerp van een how-to, maar geeft geen technische vereisten over DNSSEC-afhankelijkheid.*
 
-### `inet-toolbox-0020` — SKILL.md:335 *(§ 6. DANE instellen)*
+### `inet-toolbox-0003` — SKILL.md:335 *(§ 6. DANE instellen)*
 
-> Bij DANE met hergebruik van dezelfde privésleutel hoeft het TLSA-record niet te veranderen bij certificaatvernieuwing.
+> Bij DANE met TLSA selector=1 (SPKI) en hergebruik van de privésleutel hoeft het TLSA-record niet te veranderen bij certificaatvernieuwing.
 
-**Type:** normative_requirement  ·  **Modaliteit:** MAY  ·  **Scope:** DANE
+**Type:** normative_requirement  ·  **Modaliteit:** MAY  ·  **Scope:** DANE / TLSA
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over DANE certificaatvernieuwing of privésleutelhergebruik in de brontekst.*
+  - *Bron bevat geen technische informatie over DANE/TLSA.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over DANE privésleutel hergebruik in de aangeleverde brontekst.*
+  - *Geen technische inhoud over TLSA selector=1 of sleutelhergebruik in de aangeleverde brontekst.*
 
-### `inet-toolbox-0021` — SKILL.md:336 *(§ 6. DANE instellen)*
+### `inet-toolbox-0004` — SKILL.md:336 *(§ 6. DANE instellen)*
 
-> Bij DANE met een nieuwe sleutel moet het TLSA-record worden bijgewerkt VOOR de certificaatvernieuwing.
+> Bij DANE met een nieuwe privésleutel moet het TLSA-record worden bijgewerkt VOOR de certificaatvernieuwing.
 
-**Type:** normative_requirement  ·  **Modaliteit:** MUST  ·  **Scope:** DANE
+**Type:** normative_requirement  ·  **Modaliteit:** MUST  ·  **Scope:** DANE / TLSA
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over DANE TLSA-record updates bij sleutelwisseling in de brontekst.*
+  - *Bron bevat geen technische informatie over DANE/TLSA.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over TLSA-update timing bij certificaatvernieuwing in de aangeleverde brontekst.*
+  - *Geen technische inhoud over TLSA-record bijwerken bij certificaatvernieuwing in de aangeleverde brontekst.*
 
-### `inet-toolbox-0024` — reference.md:30 *(§ DNSSEC - geavanceerde configuratie)*
+### `inet-toolbox-0005` — SKILL.md:298 *(§ 5. SPF-record samenstellen)*
 
-> ZSK rollover wordt aanbevolen elke 3 maanden.
+> SPF-records mogen maximaal 10 DNS-lookups bevatten; elke `include`, `a`, `mx` en `redirect` telt als 1 lookup.
 
-**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** DNSSEC / key rollover
+**Type:** normative_requirement  ·  **Modaliteit:** MUST_NOT  ·  **Scope:** SPF
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over ZSK rollover-intervallen in de brontekst.*
+  - *Bron bevat geen technische informatie over SPF.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over ZSK rollover-interval in de aangeleverde brontekst.*
+  - *Geen technische SPF-inhoud over DNS-lookup limieten in de aangeleverde brontekst.*
 
-### `inet-toolbox-0025` — reference.md:39 *(§ DNSSEC - geavanceerde configuratie)*
+### `inet-toolbox-0006` — SKILL.md:300 *(§ 5. SPF-record samenstellen)*
 
-> KSK rollover wordt aanbevolen jaarlijks.
-
-**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** DNSSEC / key rollover
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over KSK rollover-intervallen in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over KSK rollover-interval in de aangeleverde brontekst.*
-
-### `inet-toolbox-0026` — reference.md:44 *(§ DNSSEC - geavanceerde configuratie)*
-
-> Bij KSK rollover moet het nieuwe DS-record bij de registrar gepubliceerd worden (naast het oude) voordat de DNSKEY RRset met de nieuwe KSK wordt ondertekend.
-
-**Type:** normative_requirement  ·  **Modaliteit:** MUST  ·  **Scope:** DNSSEC / KSK rollover
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over KSK rollover-procedure of DS-records in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over KSK rollover-procedure in de aangeleverde brontekst.*
-
-### `inet-toolbox-0027` — reference.md:59 *(§ DNSSEC - geavanceerde configuratie)*
-
-> ECDSAP256SHA256 (algoritme 13) is het aanbevolen algoritme voor nieuwe DNSSEC-zones vanwege compacte handtekeningen, brede ondersteuning en goede prestaties.
-
-**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** DNSSEC / algoritme-keuze
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over ECDSAP256SHA256 of aanbevolen DNSSEC-algoritmen in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over ECDSAP256SHA256 als aanbevolen algoritme in de aangeleverde brontekst.*
-
-### `inet-toolbox-0031` — reference.md:160 *(§ E-mailbeveiliging - geavanceerde configuratie)*
-
-> Postfix `smtp_dns_support_level = dnssec` is vereist voor DANE-ondersteuning bij uitgaand SMTP.
-
-**Type:** normative_requirement  ·  **Modaliteit:** MUST  ·  **Scope:** DANE / Postfix TLS
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over Postfix smtp_dns_support_level in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over Postfix smtp_dns_support_level in de aangeleverde brontekst.*
-
-### `inet-toolbox-0032` — reference.md:142 *(§ E-mailbeveiliging - geavanceerde configuratie)*
-
-> Postfix TLS sluit SSLv2, SSLv3, TLSv1 en TLSv1.1 uit via `smtpd_tls_protocols = !SSLv2, !SSLv3, !TLSv1, !TLSv1.1`.
-
-**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** HTTPS/TLS / Postfix
-
-- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over Postfix TLS-protocollen of smtpd_tls_protocols in de brontekst.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over Postfix smtpd_tls_protocols in de aangeleverde brontekst.*
-
-### `inet-toolbox-0033` — reference.md:191 *(§ E-mailbeveiliging - geavanceerde configuratie)*
-
-> SPF-flattening is een oplossing wanneer je tegen de 10 DNS-lookup limiet aanloopt: vervang `include` door directe ip4:/ip6: regels.
+> SPF-records dienen te eindigen met `-all` (fail) of `~all` (softfail).
 
 **Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** SPF
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over SPF-flattening in de brontekst.*
+  - *Bron bevat geen technische informatie over SPF.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over SPF-flattening in de aangeleverde brontekst.*
+  - *Geen technische SPF-inhoud over -all of ~all in de aangeleverde brontekst.*
 
-### `inet-toolbox-0034` — reference.md:239 *(§ DANE - geavanceerde configuratie)*
+### `inet-toolbox-0007` — SKILL.md:299 *(§ 5. SPF-record samenstellen)*
 
-> Bij DANE voor meerdere MX-servers moet elke MX een eigen TLSA-record hebben onder `_25._tcp.<mx-hostname>`.
+> Voor SPF wordt aanbevolen `ip4`/`ip6` te gebruiken om DNS-lookups te besparen.
 
-**Type:** normative_requirement  ·  **Modaliteit:** MUST  ·  **Scope:** DANE / meerdere MX-servers
+**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** SPF
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over DANE met meerdere MX-servers in de brontekst.*
+  - *Bron bevat geen technische informatie over SPF.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over DANE voor meerdere MX-servers in de aangeleverde brontekst.*
+  - *Geen technische SPF-inhoud over ip4/ip6 gebruik in de aangeleverde brontekst.*
 
-### `inet-toolbox-0035` — reference.md:230 *(§ DANE - geavanceerde configuratie)*
+### `inet-toolbox-0012` — SKILL.md:396 *(§ Veelvoorkomende problemen)*
 
-> Voor DANE-rollover kunnen meerdere TLSA-records tegelijk gepubliceerd worden: het huidige en het toekomstige certificaat naast elkaar.
+> DANE TLSA mismatch na certificaatvernieuwing kan worden voorkomen door SPKI (selector=1) te gebruiken en de privésleutel te hergebruiken, of door TLSA vooraf bij te werken.
 
-**Type:** normative_requirement  ·  **Modaliteit:** MAY  ·  **Scope:** DANE / certificaatrollover
+**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** DANE / TLSA
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over DANE-rollover of meerdere TLSA-records in de brontekst.*
+  - *Bron bevat geen technische informatie over DANE/TLSA.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over DANE-rollover met meerdere TLSA-records in de aangeleverde brontekst.*
+  - *Geen technische DANE/TLSA-inhoud over mismatch-preventie in de aangeleverde brontekst.*
 
-### `inet-toolbox-0036` — reference.md:281 *(§ IPv6 - geavanceerde configuratie)*
+### `inet-toolbox-0014` — SKILL.md:156 *(§ 2. HTTPS/TLS configureren)*
 
-> ICMPv6 moet geaccepteerd worden in de firewall (nftables) omdat het nodig is voor IPv6-werking.
+> De Nginx HTTPS-configuratie gebruikt TLSv1.2 en TLSv1.3 als toegestane protocollen (NCSC-conform).
+
+**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** HTTPS/TLS / Nginx
+
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen Nginx/TLS-configuratie-informatie.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *Geen technische Nginx TLS-configuratie-inhoud in de aangeleverde brontekst.*
+
+### `inet-toolbox-0015` — SKILL.md:158 *(§ 2. HTTPS/TLS configureren)*
+
+> De Nginx HTTPS-configuratie stelt `ssl_prefer_server_ciphers off` in.
+
+**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** HTTPS/TLS / Nginx
+
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen Nginx/TLS-configuratie-informatie.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *Geen technische Nginx-inhoud over ssl_prefer_server_ciphers in de aangeleverde brontekst.*
+
+### `inet-toolbox-0016` — SKILL.md:160 *(§ 2. HTTPS/TLS configureren)*
+
+> De Nginx HTTPS-configuratie schakelt OCSP Stapling in via `ssl_stapling on` en `ssl_stapling_verify on`.
+
+**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** HTTPS/TLS / Nginx
+
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen Nginx/TLS-configuratie-informatie.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *Geen technische Nginx-inhoud over OCSP Stapling in de aangeleverde brontekst.*
+
+### `inet-toolbox-0017` — SKILL.md:166 *(§ 2. HTTPS/TLS configureren)*
+
+> De aanbevolen HSTS-header voor Nginx is `Strict-Transport-Security: max-age=31536000; includeSubDomains`.
+
+**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** HTTPS/TLS / HSTS
+
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen HSTS-configuratie-informatie.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *Geen technische inhoud over HSTS-headers in de aangeleverde brontekst.*
+
+### `inet-toolbox-0018` — SKILL.md:197 *(§ 2. HTTPS/TLS configureren)*
+
+> Apache HTTPS-configuratie schakelt SSLv3, TLSv1 en TLSv1.1 uit via `SSLProtocol all -SSLv3 -TLSv1 -TLSv1.1`.
+
+**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** HTTPS/TLS / Apache
+
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen Apache/TLS-configuratie-informatie.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *Geen technische Apache TLS-configuratie-inhoud in de aangeleverde brontekst.*
+
+### `inet-toolbox-0019` — SKILL.md:199 *(§ 2. HTTPS/TLS configureren)*
+
+> Apache HTTPS-configuratie stelt `SSLHonorCipherOrder off` in.
+
+**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** HTTPS/TLS / Apache
+
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen Apache/TLS-configuratie-informatie.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *Geen technische Apache-inhoud over SSLHonorCipherOrder in de aangeleverde brontekst.*
+
+### `inet-toolbox-0022` — reference.md:30 *(§ DNSSEC - geavanceerde configuratie)*
+
+> DNSSEC ZSK rollover wordt aanbevolen elke 3 maanden.
+
+**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** DNSSEC / ZSK rollover
+
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen informatie over DNSSEC ZSK rollover.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *Geen technische DNSSEC-inhoud over ZSK rollover frequentie in de aangeleverde brontekst.*
+
+### `inet-toolbox-0023` — reference.md:39 *(§ DNSSEC - geavanceerde configuratie)*
+
+> DNSSEC KSK rollover wordt aanbevolen jaarlijks.
+
+**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** DNSSEC / KSK rollover
+
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen informatie over DNSSEC KSK rollover.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *Geen technische DNSSEC-inhoud over KSK rollover frequentie in de aangeleverde brontekst.*
+
+### `inet-toolbox-0024` — reference.md:35 *(§ DNSSEC - geavanceerde configuratie)*
+
+> Bij ZSK rollover moet na het genereren van de nieuwe sleutel gewacht worden tot de oude TTL verlopen is (24-48 uur) voordat met de nieuwe sleutel ondertekend wordt.
+
+**Type:** normative_requirement  ·  **Modaliteit:** MUST  ·  **Scope:** DNSSEC / ZSK rollover
+
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen informatie over DNSSEC ZSK rollover procedures.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *Geen technische DNSSEC-inhoud over ZSK rollover procedure in de aangeleverde brontekst.*
+
+### `inet-toolbox-0025` — reference.md:44 *(§ DNSSEC - geavanceerde configuratie)*
+
+> Bij KSK rollover moet het DS-record van de nieuwe KSK bij de registrar worden gepubliceerd naast het oude voordat de DNSKEY RRset met de nieuwe KSK wordt ondertekend.
+
+**Type:** normative_requirement  ·  **Modaliteit:** MUST  ·  **Scope:** DNSSEC / KSK rollover
+
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen informatie over DNSSEC KSK rollover procedures.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *Geen technische DNSSEC-inhoud over KSK rollover en DS-records in de aangeleverde brontekst.*
+
+### `inet-toolbox-0026` — reference.md:59 *(§ DNSSEC - geavanceerde configuratie)*
+
+> ECDSAP256SHA256 (algoritme 13) is het aanbevolen DNSSEC-algoritme voor nieuwe zones vanwege compacte handtekeningen, brede ondersteuning en goede prestaties.
+
+**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** DNSSEC / algoritme-keuze
+
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen informatie over DNSSEC algoritme-keuze.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *Geen technische DNSSEC-inhoud over algoritme-aanbevelingen in de aangeleverde brontekst.*
+
+### `inet-toolbox-0030` — reference.md:89 *(§ HTTPS/TLS - geavanceerde configuratie)*
+
+> Mozilla SSL Configuration Generator adviseert 'Intermediate' voor de beste balans tussen beveiliging en compatibiliteit.
+
+**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** HTTPS/TLS
+
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen informatie over Mozilla SSL Configuration Generator.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *Geen inhoud over Mozilla SSL Configuration Generator in de aangeleverde brontekst.*
+
+### `inet-toolbox-0031` — reference.md:153 *(§ E-mailbeveiliging - geavanceerde configuratie)*
+
+> Postfix uitgaand TLS gebruikt `smtp_tls_security_level = dane` voor DANE-validatie.
+
+**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** Postfix / DANE / TLS
+
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen Postfix/DANE/TLS-configuratie-informatie.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *Geen technische Postfix/DANE-inhoud in de aangeleverde brontekst.*
+
+### `inet-toolbox-0032` — reference.md:160 *(§ E-mailbeveiliging - geavanceerde configuratie)*
+
+> Postfix DANE vereist `smtp_dns_support_level = dnssec`.
+
+**Type:** normative_requirement  ·  **Modaliteit:** MUST  ·  **Scope:** Postfix / DANE
+
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen Postfix/DANE-configuratie-informatie.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *Geen technische Postfix/DANE-inhoud over smtp_dns_support_level in de aangeleverde brontekst.*
+
+### `inet-toolbox-0033` — reference.md:142 *(§ E-mailbeveiliging - geavanceerde configuratie)*
+
+> Postfix TLS-configuratie sluit SSLv2, SSLv3, TLSv1 en TLSv1.1 uit voor zowel inkomend als uitgaand verkeer.
+
+**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** Postfix / TLS
+
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen Postfix/TLS-configuratie-informatie.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *Geen technische Postfix TLS-configuratie-inhoud in de aangeleverde brontekst.*
+
+### `inet-toolbox-0034` — reference.md:189 *(§ E-mailbeveiliging - geavanceerde configuratie)*
+
+> SPF-flattening is een oplossing wanneer het aantal DNS-lookups de limiet van 10 overschrijdt: IP-adressen direct opnemen of subdomeinen gebruiken.
+
+**Type:** normative_requirement  ·  **Modaliteit:** SHOULD  ·  **Scope:** SPF
+
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen informatie over SPF-flattening.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *Geen technische SPF-inhoud over flattening in de aangeleverde brontekst.*
+
+### `inet-toolbox-0035` — reference.md:239 *(§ DANE - geavanceerde configuratie)*
+
+> Bij DANE voor meerdere MX-servers moet elk MX-domein een eigen TLSA-record hebben onder `_25._tcp.<mx-hostname>`.
+
+**Type:** normative_requirement  ·  **Modaliteit:** MUST  ·  **Scope:** DANE / meerdere MX
+
+- **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
+  - *Bron bevat geen informatie over DANE voor meerdere MX-servers.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *Geen technische DANE/TLSA-inhoud over meerdere MX-servers in de aangeleverde brontekst.*
+
+### `inet-toolbox-0037` — reference.md:282 *(§ IPv6 - geavanceerde configuratie)*
+
+> ICMPv6 moet worden toegestaan in de firewall omdat het nodig is voor IPv6.
 
 **Type:** normative_requirement  ·  **Modaliteit:** MUST  ·  **Scope:** IPv6 / firewall
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over IPv6, ICMPv6 of nftables in de brontekst.*
+  - *Bron bevat geen informatie over IPv6 firewall-configuratie.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over ICMPv6 of nftables in de aangeleverde brontekst.*
+  - *Geen technische IPv6/firewall-inhoud over ICMPv6 in de aangeleverde brontekst.*
 
-### `inet-toolbox-0037` — reference.md:122 *(§ HTTPS/TLS - geavanceerde configuratie)*
+### `inet-toolbox-0038` — reference.md:122 *(§ HTTPS/TLS - geavanceerde configuratie)*
 
-> Let's Encrypt wildcard-certificaten vereisen een DNS-challenge (`--preferred-challenges dns`).
+> Let's Encrypt wildcard-certificaten vereisen een DNS-challenge.
 
-**Type:** normative_requirement  ·  **Modaliteit:** MUST  ·  **Scope:** HTTPS/TLS / Let's Encrypt
+**Type:** normative_requirement  ·  **Modaliteit:** MUST  ·  **Scope:** Let's Encrypt / wildcard
 
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over Let's Encrypt wildcard-certificaten of DNS-challenges in de brontekst.*
+  - *Bron bevat geen informatie over Let's Encrypt wildcard-certificaten.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *Geen inhoud over Let's Encrypt wildcard-certificaten of DNS-challenge in de aangeleverde brontekst.*
+  - *Geen technische inhoud over Let's Encrypt wildcard-certificaten in de aangeleverde brontekst.*
 
 ## GROUNDED — minstens één bron ondersteunt de claim (1)
 
 <details>
 <summary>Klap uit voor alle GROUNDED claims</summary>
 
-### `inet-toolbox-0038` — SKILL.md:385 *(§ Repositories)*
+### `inet-toolbox-0020` — SKILL.md:385 *(§ Repositories)*
 
 > De toolbox-wiki is gepubliceerd onder de CC-BY-4.0 licentie.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** toolbox-wiki / licentie
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** toolbox-wiki
 
 - **SUPPORTED** (medium) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
   > LICENSE-CC-BY-4.0.txt
-  - *De repository bevat een bestand genaamd LICENSE-CC-BY-4.0.txt, wat sterk impliceert dat de CC-BY-4.0 licentie van toepassing is. De bestandsnaam is geen expliciete verklaring, maar is voldoende directe aanwijzing. Confidence medium omdat de volledige licentietekst niet is weergegeven.*
+  - *De repository bevat een bestand genaamd LICENSE-CC-BY-4.0.txt, wat sterk suggereert dat de licentie CC-BY-4.0 is. De exacte licentietekst is niet aangeleverd, maar de bestandsnaam is een directe aanwijzing.*
+- **SOURCE_UNAVAILABLE** (high) — [https://raw.githubusercontent.com/internetstandards/toolbox-wiki/main/LICENSE](https://raw.githubusercontent.com/internetstandards/toolbox-wiki/main/LICENSE)
+  - *Bron status: unreachable*
+- **SOURCE_UNAVAILABLE** (high) — [https://raw.githubusercontent.com/internetstandards/toolbox-wiki/master/LICENSE](https://raw.githubusercontent.com/internetstandards/toolbox-wiki/master/LICENSE)
+  - *Bron status: unreachable*
 - **NOT_FOUND** (high) — [https://internet.nl/halloffame/](https://internet.nl/halloffame/)
-  - *Geen informatie over licenties van de toolbox-wiki in de brontekst.*
+  - *Bron bevat geen licentie-informatie over de toolbox-wiki.*
 
 </details>

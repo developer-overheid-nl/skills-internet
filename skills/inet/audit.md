@@ -7,16 +7,16 @@
 
 | Status | Aantal | % |
 |--------|--------|---|
-| UNSUPPORTED_ASSERTION | 14 | 70% |
+| UNSUPPORTED_ASSERTION | 14 | 74% |
 | CONTRADICTED | 0 | 0% |
-| PARTIALLY_GROUNDED | 1 | 5% |
+| PARTIALLY_GROUNDED | 3 | 16% |
 | UNGROUNDED | 0 | 0% |
 | NO_SOURCE | 0 | 0% |
 | UNVERIFIABLE | 0 | 0% |
 | KNOWN_DISCREPANCY | 0 | 0% |
-| GROUNDED | 5 | 25% |
+| GROUNDED | 2 | 11% |
 
-*Geverifieerd met sonnet, 6 calls, $0.3397.*
+*Geverifieerd met sonnet, 6 calls, $0.3387.*
 
 ## UNSUPPORTED_ASSERTION — stellige bewering zonder enige bronsteun (mogelijke hallucinatie) (14)
 
@@ -24,237 +24,236 @@
 
 > Internet.nl is een initiatief van de Nederlandse overheid waarmee organisaties kunnen testen of hun website en e-mail voldoen aan moderne internetstandaarden.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** internet.nl platform
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** internet.nl algemeen
 
 - **NOT_FOUND** (high) — [https://www.forumstandaardisatie.nl/open-standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
-  - *De brontekst beschrijft de website van Forum Standaardisatie over open standaarden. Internet.nl wordt nergens vermeld.*
+  - *De brontekst is de algemene lijstpagina van Forum Standaardisatie en bevat geen informatie over internet.nl of wat het initiatief doet.*
 
 ### `inet-0002` — SKILL.md:26 *(§ Wat is internet.nl?)*
 
-> De standaarden getest door internet.nl staan op de pas-toe-of-leg-uit-lijst van Forum Standaardisatie.
+> De internetstandaarden getest door internet.nl staan op de pas-toe-of-leg-uit-lijst van Forum Standaardisatie.
 
 **Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** internet.nl / Forum Standaardisatie
 
 - **NOT_FOUND** (high) — [https://www.forumstandaardisatie.nl/open-standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
-  - *Internet.nl wordt niet vermeld in de brontekst. De bron bevestigt wel dat er een 'pas-toe-of-leg-uit'-lijst bestaat, maar legt geen koppeling met internet.nl.*
+  - *De bron vermeldt het bestaan van de pas-toe-of-leg-uit-lijst maar noemt internet.nl niet en koppelt de geteste standaarden niet aan internet.nl.*
 
 ### `inet-0003` — SKILL.md:52 *(§ Webstandaarden)*
 
 > IPv6 heeft de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)' voor webstandaarden.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** IPv6 / Forum Standaardisatie webstandaarden
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Webstandaarden / Forum Standaardisatie
 
 - **NOT_FOUND** (high) — [https://www.forumstandaardisatie.nl/open-standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
-  - *IPv6 wordt niet specifiek genoemd in de brontekst. De bron is een navigatiepagina zonder inhoudelijke details over individuele standaarden.*
+  - *De bron noemt de pas-toe-of-leg-uit-lijst als concept maar somt geen specifieke standaarden zoals IPv6 op.*
 - **NOT_FOUND** (high) — [https://internet.nl/about/](https://internet.nl/about/)
-  - *De brontekst beschrijft wat internet.nl is en wie eraan meewerkt, maar bevat geen informatie over Forum Standaardisatie-statussen of specifieke standaarden zoals IPv6.*
+  - *De brontekst gaat over wat internet.nl is en wie erachter zit. Forum Standaardisatie-statussen worden niet vermeld.*
 
 ### `inet-0004` — SKILL.md:53 *(§ Webstandaarden)*
 
 > DNSSEC heeft de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)' en beveiligt DNS-naamresolutie tegen manipulatie.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** DNSSEC / Forum Standaardisatie webstandaarden
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Webstandaarden / Forum Standaardisatie
 
 - **NOT_FOUND** (high) — [https://www.forumstandaardisatie.nl/open-standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
-  - *DNSSEC wordt niet vermeld in de brontekst.*
+  - *DNSSEC wordt niet genoemd in de brontekst.*
 - **NOT_FOUND** (high) — [https://internet.nl/about/](https://internet.nl/about/)
-  - *De brontekst noemt DNSSEC niet en bevat geen Forum Standaardisatie-statusinformatie.*
+  - *De brontekst gaat over wat internet.nl is en wie erachter zit. Forum Standaardisatie-statussen worden niet vermeld.*
 
 ### `inet-0005` — SKILL.md:54 *(§ Webstandaarden)*
 
 > HTTPS (TLS 1.2/1.3) heeft de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)'.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** HTTPS/TLS / Forum Standaardisatie webstandaarden
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Webstandaarden / Forum Standaardisatie
 
 - **NOT_FOUND** (high) — [https://www.forumstandaardisatie.nl/open-standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
-  - *HTTPS/TLS wordt niet vermeld in de brontekst.*
+  - *HTTPS/TLS wordt niet genoemd in de brontekst.*
 - **NOT_FOUND** (high) — [https://internet.nl/about/](https://internet.nl/about/)
-  - *HTTPS/TLS wordt niet vermeld in de brontekst. Geen Forum Standaardisatie-informatie aanwezig.*
+  - *De brontekst gaat over wat internet.nl is en wie erachter zit. Forum Standaardisatie-statussen worden niet vermeld.*
 
 ### `inet-0006` — SKILL.md:55 *(§ Webstandaarden)*
 
 > HSTS heeft de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)' en dwingt browsers HTTPS te gebruiken.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** HSTS / Forum Standaardisatie webstandaarden
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Webstandaarden / Forum Standaardisatie
 
 - **NOT_FOUND** (high) — [https://www.forumstandaardisatie.nl/open-standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
-  - *HSTS wordt niet vermeld in de brontekst.*
+  - *HSTS wordt niet genoemd in de brontekst.*
 - **NOT_FOUND** (high) — [https://internet.nl/about/](https://internet.nl/about/)
-  - *HSTS wordt niet vermeld in de brontekst.*
+  - *De brontekst gaat over wat internet.nl is en wie erachter zit. Forum Standaardisatie-statussen worden niet vermeld.*
 
 ### `inet-0007` — SKILL.md:56 *(§ Webstandaarden)*
 
 > Security headers (CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy) worden getest door internet.nl maar hebben geen Forum Standaardisatie-status.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Security headers / internet.nl webstandaarden
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Webstandaarden / Forum Standaardisatie
 
 - **NOT_FOUND** (high) — [https://www.forumstandaardisatie.nl/open-standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
-  - *Security headers (CSP, X-Frame-Options, etc.) worden niet vermeld in de brontekst.*
+  - *Security headers worden niet genoemd in de brontekst.*
 - **NOT_FOUND** (high) — [https://internet.nl/about/](https://internet.nl/about/)
-  - *Security headers (CSP, X-Frame-Options, etc.) worden niet vermeld in de brontekst.*
+  - *De brontekst gaat over wat internet.nl is en wie erachter zit. Specifieke testitems of Forum Standaardisatie-statussen worden niet vermeld.*
 
 ### `inet-0009` — SKILL.md:58 *(§ Webstandaarden)*
 
-> RPKI (Route Origin Validation) heeft de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)' en beschermt BGP-routing.
+> RPKI heeft de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)' en beschermt BGP-routing via Route Origin Validation.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** RPKI / Forum Standaardisatie webstandaarden
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Webstandaarden / Forum Standaardisatie
 
 - **NOT_FOUND** (high) — [https://www.forumstandaardisatie.nl/open-standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
-  - *RPKI wordt niet vermeld in de brontekst.*
+  - *RPKI wordt niet genoemd in de brontekst.*
 - **NOT_FOUND** (high) — [https://internet.nl/about/](https://internet.nl/about/)
-  - *RPKI wordt niet vermeld in de brontekst.*
+  - *De brontekst gaat over wat internet.nl is en wie erachter zit. Forum Standaardisatie-statussen worden niet vermeld.*
 
 ### `inet-0010` — SKILL.md:64 *(§ Mailstandaarden)*
 
 > SPF heeft de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)' en autoriseert verzendende mailservers.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** SPF / Forum Standaardisatie mailstandaarden
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Mailstandaarden / Forum Standaardisatie
 
 - **NOT_FOUND** (high) — [https://www.forumstandaardisatie.nl/open-standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
-  - *SPF wordt niet vermeld in de brontekst.*
+  - *SPF wordt niet genoemd in de brontekst.*
 - **NOT_FOUND** (high) — [https://internet.nl/about/](https://internet.nl/about/)
-  - *SPF wordt niet vermeld in de brontekst. De bron noemt SMTP alleen als voorbeeld van een bekende e-mailprotocol, zonder Forum Standaardisatie-statusinformatie.*
+  - *De brontekst gaat over wat internet.nl is en wie erachter zit. Forum Standaardisatie-statussen worden niet vermeld.*
 
 ### `inet-0011` — SKILL.md:65 *(§ Mailstandaarden)*
 
-> DKIM heeft de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)' en plaatst een digitale handtekening op e-mail.
+> DKIM heeft de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)' en biedt een digitale handtekening op e-mail.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** DKIM / Forum Standaardisatie mailstandaarden
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Mailstandaarden / Forum Standaardisatie
 
 - **NOT_FOUND** (high) — [https://www.forumstandaardisatie.nl/open-standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
-  - *DKIM wordt niet vermeld in de brontekst.*
+  - *DKIM wordt niet genoemd in de brontekst.*
 - **NOT_FOUND** (high) — [https://internet.nl/about/](https://internet.nl/about/)
-  - *DKIM wordt niet vermeld in de brontekst.*
+  - *De brontekst gaat over wat internet.nl is en wie erachter zit. Forum Standaardisatie-statussen worden niet vermeld.*
 
 ### `inet-0012` — SKILL.md:66 *(§ Mailstandaarden)*
 
 > DMARC heeft de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)' en bouwt voort op SPF en DKIM.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** DMARC / Forum Standaardisatie mailstandaarden
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Mailstandaarden / Forum Standaardisatie
 
 - **NOT_FOUND** (high) — [https://www.forumstandaardisatie.nl/open-standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
-  - *DMARC wordt niet vermeld in de brontekst.*
+  - *DMARC wordt niet genoemd in de brontekst.*
 - **NOT_FOUND** (high) — [https://internet.nl/about/](https://internet.nl/about/)
-  - *DMARC wordt niet vermeld in de brontekst.*
+  - *De brontekst gaat over wat internet.nl is en wie erachter zit. Forum Standaardisatie-statussen worden niet vermeld.*
 
 ### `inet-0013` — SKILL.md:67 *(§ Mailstandaarden)*
 
-> STARTTLS + DANE heeft de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)'; STARTTLS versleutelt SMTP-verkeer en DANE biedt DNS-gebaseerde certificaatverificatie.
+> STARTTLS + DANE heeft de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)'; STARTTLS versleutelt SMTP-verkeer, DANE biedt DNS-gebaseerde certificaatverificatie.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** STARTTLS + DANE / Forum Standaardisatie mailstandaarden
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Mailstandaarden / Forum Standaardisatie
 
 - **NOT_FOUND** (high) — [https://www.forumstandaardisatie.nl/open-standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
-  - *STARTTLS en DANE worden niet vermeld in de brontekst.*
+  - *STARTTLS en DANE worden niet genoemd in de brontekst.*
 - **NOT_FOUND** (high) — [https://internet.nl/about/](https://internet.nl/about/)
-  - *STARTTLS en DANE worden niet vermeld in de brontekst.*
+  - *De brontekst gaat over wat internet.nl is en wie erachter zit. Forum Standaardisatie-statussen worden niet vermeld.*
 
 ### `inet-0014` — SKILL.md:68 *(§ Mailstandaarden)*
 
-> IPv6 heeft de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)' voor de bereikbaarheid van MX- en nameservers.
+> IPv6 heeft de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)' voor mailstandaarden (bereikbaarheid van MX- en nameservers).
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** IPv6 / Forum Standaardisatie mailstandaarden
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Mailstandaarden / Forum Standaardisatie
 
 - **NOT_FOUND** (high) — [https://www.forumstandaardisatie.nl/open-standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
-  - *IPv6 voor MX- en nameservers wordt niet vermeld in de brontekst.*
+  - *IPv6 voor mailstandaarden wordt niet genoemd in de brontekst.*
 - **NOT_FOUND** (high) — [https://internet.nl/about/](https://internet.nl/about/)
-  - *IPv6 voor MX- en nameservers wordt niet vermeld in de brontekst.*
+  - *De brontekst gaat over wat internet.nl is en wie erachter zit. Forum Standaardisatie-statussen worden niet vermeld.*
 
 ### `inet-0015` — SKILL.md:69 *(§ Mailstandaarden)*
 
-> RPKI heeft de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)' voor MX- en nameservers.
+> RPKI heeft de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)' voor mailstandaarden (Route Origin Validation voor MX- en nameservers).
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** RPKI / Forum Standaardisatie mailstandaarden
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Mailstandaarden / Forum Standaardisatie
 
 - **NOT_FOUND** (high) — [https://www.forumstandaardisatie.nl/open-standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
-  - *RPKI voor MX- en nameservers wordt niet vermeld in de brontekst.*
+  - *RPKI voor mailstandaarden wordt niet genoemd in de brontekst.*
 - **NOT_FOUND** (high) — [https://internet.nl/about/](https://internet.nl/about/)
-  - *RPKI voor MX- en nameservers wordt niet vermeld in de brontekst.*
+  - *De brontekst gaat over wat internet.nl is en wie erachter zit. Forum Standaardisatie-statussen worden niet vermeld.*
 
-## PARTIALLY_GROUNDED — bron ondersteunt deel van de claim (1)
+## PARTIALLY_GROUNDED — bron ondersteunt deel van de claim (3)
 
 ### `inet-0008` — SKILL.md:57 *(§ Webstandaarden)*
 
 > security.txt heeft de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)' en is gedefinieerd in RFC 9116.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** security.txt / Forum Standaardisatie webstandaarden
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Webstandaarden / Forum Standaardisatie
 
-- **PARTIALLY_SUPPORTED** (high) — [https://www.rfc-editor.org/rfc/rfc9116.txt](https://www.rfc-editor.org/rfc/rfc9116.txt)
-  > This document defines a machine-parsable format ("security.txt") to help organizations describe their vulnerability disclosure practices... RFC 9116
-  - *De bron bevestigt dat security.txt gedefinieerd is in RFC 9116. De claim over de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)' wordt niet vermeld in deze bron — dat is een Nederlandse overheids-classificatie die buiten de scope van de RFC valt.*
+- **PARTIALLY_SUPPORTED** (medium) — [https://www.rfc-editor.org/rfc/rfc9116.txt](https://www.rfc-editor.org/rfc/rfc9116.txt)
+  > This document defines a machine-parsable format ("security.txt") to help organizations describe their vulnerability disclosure practices... [published as] RFC 9116
+  - *De bron bevestigt dat security.txt gedefinieerd is in RFC 9116. Echter, de Forum Standaardisatie-status 'Verplicht (pas-toe-of-leg-uit)' wordt nergens in de RFC vermeld — dat is een Nederlandse overheidsclassificatie die buiten de scope van dit document valt.*
 
-## GROUNDED — minstens één bron ondersteunt de claim (5)
+### `inet-0017` — SKILL.md:79 *(§ Repositories)*
+
+> De documentatie voor de batch API (v2) van internet.nl staat in de repository Internet.nl-API-docs onder CC-BY-4.0 licentie.
+
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** internet.nl repositories / Batch API v2
+
+- **SOURCE_UNAVAILABLE** (high) — [https://raw.githubusercontent.com/internetstandards/Internet.nl/main/LICENSE](https://raw.githubusercontent.com/internetstandards/Internet.nl/main/LICENSE)
+  - *Bron status: unreachable*
+- **SOURCE_UNAVAILABLE** (high) — [https://raw.githubusercontent.com/internetstandards/Internet.nl/master/LICENSE](https://raw.githubusercontent.com/internetstandards/Internet.nl/master/LICENSE)
+  - *Bron status: unreachable*
+- **PARTIALLY_SUPPORTED** (medium) — [https://github.com/internetstandards/Internet.nl-API-docs](https://github.com/internetstandards/Internet.nl-API-docs)
+  > Documentation on the Internet.nl batch API and web-based dashboard [...] LICENSE-CC-BY-4.0.txt
+  - *De bron bevestigt dat de repository Internet.nl-API-docs documentatie bevat over de batch API én een CC-BY-4.0 licentiebestand aanwezig is. De claim noemt specifiek 'v2', maar de bron toont mappen v1.1 en v2.0 zonder expliciet te stellen dat v2 de huidige/hoofdversie is. Het CC-BY-4.0 karakter is ondersteund via het aanwezige licentiebestand, maar niet expliciet als licentietekst vermeld.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/Internet.nl](https://github.com/internetstandards/Internet.nl)
+  - *De brontekst beschrijft de hoofdrepository internetstandards/Internet.nl. Er is geen vermelding van een aparte 'Internet.nl-API-docs' repository of batch API v2 documentatie.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  - *De brontekst beschrijft de toolbox-wiki repository. Er is geen vermelding van een 'Internet.nl-API-docs' repository of batch API v2 documentatie.*
+
+### `inet-0018` — SKILL.md:80 *(§ Repositories)*
+
+> De implementatiegidsen per standaard en platform staan in de toolbox-wiki repository onder CC-BY-4.0 licentie.
+
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** internet.nl repositories
+
+- **PARTIALLY_SUPPORTED** (medium) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
+  > This GitHub repository contains several how-to's for providing practical information and guidance on implementing secure and modern Internet Standards. [...] LICENSE-CC-BY-4.0.txt
+  - *De bron bevestigt dat de toolbox-wiki implementatiegidsen bevat en dat er een CC-BY-4.0 licentiebestand aanwezig is. De claim dat het 'per standaard en platform' is wordt deels ondersteund (DANE, DKIM, SPF, DMARC how-to's zijn zichtbaar), maar 'per platform' wordt niet expliciet vermeld. De CC-BY-4.0 licentie is aanwezig als bestand maar wordt niet expliciet als de geldende licentie benoemd in de tekst.*
+- **SOURCE_UNAVAILABLE** (high) — [https://raw.githubusercontent.com/internetstandards/toolbox-wiki/main/LICENSE](https://raw.githubusercontent.com/internetstandards/toolbox-wiki/main/LICENSE)
+  - *Bron status: unreachable*
+- **SOURCE_UNAVAILABLE** (high) — [https://raw.githubusercontent.com/internetstandards/toolbox-wiki/master/LICENSE](https://raw.githubusercontent.com/internetstandards/toolbox-wiki/master/LICENSE)
+  - *Bron status: unreachable*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/Internet.nl](https://github.com/internetstandards/Internet.nl)
+  - *De brontekst maakt geen melding van een 'toolbox-wiki' repository of implementatiegidsen per standaard en platform.*
+- **NOT_FOUND** (high) — [https://github.com/internetstandards/Internet.nl-API-docs](https://github.com/internetstandards/Internet.nl-API-docs)
+  - *De brontekst gaat uitsluitend over Internet.nl-API-docs. Er is geen vermelding van een toolbox-wiki repository of implementatiegidsen per standaard en platform.*
+
+## GROUNDED — minstens één bron ondersteunt de claim (2)
 
 <details>
 <summary>Klap uit voor alle GROUNDED claims</summary>
 
 ### `inet-0016` — SKILL.md:78 *(§ Repositories)*
 
-> De internet.nl testsuite (Internet.nl repository) is gepubliceerd onder Apache-2.0 licentie voor code en CC-BY-4.0 voor vertalingen.
+> De internet.nl testsuite (Python/Django) is gepubliceerd onder Apache-2.0 (code) en CC-BY-4.0 (vertalingen) op GitHub.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Internet.nl repository licenties
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** internet.nl repositories
 
+- **SOURCE_UNAVAILABLE** (high) — [https://raw.githubusercontent.com/internetstandards/Internet.nl/main/LICENSE](https://raw.githubusercontent.com/internetstandards/Internet.nl/main/LICENSE)
+  - *Bron status: unreachable*
+- **SOURCE_UNAVAILABLE** (high) — [https://raw.githubusercontent.com/internetstandards/Internet.nl/master/LICENSE](https://raw.githubusercontent.com/internetstandards/Internet.nl/master/LICENSE)
+  - *Bron status: unreachable*
 - **SUPPORTED** (high) — [https://github.com/internetstandards/Internet.nl](https://github.com/internetstandards/Internet.nl)
   > This project is licensed under the Apache License, Version 2.0 - see the LICENSE-Apache-2.0.txt file for details. The files under the /translations folder are licensed under Attribution 4.0 International (CC BY 4.0) - see the LICENSE-CC-BY-4.0.txt file for details.
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/Internet.nl-API-docs](https://github.com/internetstandards/Internet.nl-API-docs)
-  - *De brontekst is de GitHub-pagina van de Internet.nl-API-docs repository en bevat geen informatie over de licentie van de internet.nl testsuite (het hoofdrepository). Er wordt alleen een LICENSE-CC-BY-4.0.txt bestand genoemd voor deze docs-repo zelf.*
+  - *De brontekst beschrijft alleen de Internet.nl-API-docs repository en vermeldt niets over de Python/Django testsuite of Apache-2.0 licentie.*
 - **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *De bron vermeldt alleen CC-BY-4.0 (zichtbaar in het bestandsoverzicht: LICENSE-CC-BY-4.0.txt), maar gaat over de toolbox-wiki, niet over de internet.nl testsuite. Apache-2.0 en vertalingen worden niet genoemd.*
+  - *De brontekst gaat over de toolbox-wiki repository, niet over de internet.nl testsuite (Python/Django). Geen informatie over Apache-2.0 of code/vertalingen licenties van de testsuite.*
 
-### `inet-0017` — SKILL.md:79 *(§ Repositories)*
-
-> De Internet.nl-API-docs repository (documentatie voor de batch API v2) is gepubliceerd onder de CC-BY-4.0 licentie.
-
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Internet.nl Batch API v2 documentatie
-
-- **SUPPORTED** (medium) — [https://github.com/internetstandards/Internet.nl-API-docs](https://github.com/internetstandards/Internet.nl-API-docs)
-  > LICENSE-CC-BY-4.0.txt
-  - *De brontekst toont een bestand genaamd 'LICENSE-CC-BY-4.0.txt' in de Internet.nl-API-docs repository. Dit is een sterke indicatie dat de CC-BY-4.0 licentie van toepassing is, hoewel de volledige licentietekst niet in de verstrekte bron staat.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/Internet.nl](https://github.com/internetstandards/Internet.nl)
-  - *De bron beschrijft alleen de Internet.nl repository zelf, niet een aparte API-docs repository. Geen informatie over de licentie van die repository.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *De bron behandelt de toolbox-wiki repository, niet de Internet.nl-API-docs repository. De CC-BY-4.0 licentie voor die specifieke repo wordt hier niet bevestigd.*
-
-### `inet-0018` — SKILL.md:80 *(§ Repositories)*
-
-> De toolbox-wiki repository (implementatiegidsen per standaard en platform) is gepubliceerd onder de CC-BY-4.0 licentie.
-
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Internet.nl toolbox-wiki licentie
-
-- **SUPPORTED** (medium) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  > LICENSE-CC-BY-4.0.txt (bestandsnaam zichtbaar in repository bestandsoverzicht van internetstandards/toolbox-wiki)
-  - *De aanwezigheid van LICENSE-CC-BY-4.0.txt in de repository impliceert sterk de CC-BY-4.0 licentie, maar de licentie wordt nergens expliciet als tekst vermeld in de aangeleverde brontekst. Confidence medium omdat het een bestandsnaam is, geen uitgeschreven licentievermelding.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/Internet.nl](https://github.com/internetstandards/Internet.nl)
-  - *De bron beschrijft alleen de Internet.nl repository zelf, niet een aparte toolbox-wiki repository. Geen informatie over de licentie van die repository.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/Internet.nl-API-docs](https://github.com/internetstandards/Internet.nl-API-docs)
-  - *De brontekst behandelt uitsluitend de Internet.nl-API-docs repository. Er is geen informatie over een toolbox-wiki repository of de licentie daarvan.*
-
-### `inet-0019` — SKILL.md:78 *(§ Repositories)*
-
-> De internet.nl testsuite is gebouwd met Python/Django.
-
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Internet.nl technische implementatie
-
-- **SUPPORTED** (high) — [https://github.com/internetstandards/Internet.nl](https://github.com/internetstandards/Internet.nl)
-  > Python 3 (main programming language) Django (web framework)
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/Internet.nl-API-docs](https://github.com/internetstandards/Internet.nl-API-docs)
-  - *De brontekst bevat geen informatie over de technische implementatie (Python/Django) van de internet.nl testsuite.*
-- **NOT_FOUND** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
-  - *De bron gaat over de toolbox-wiki (implementatiegidsen voor mailstandaarden), niet over de technische implementatie van de testsuite. Python/Django wordt niet vermeld.*
-
-### `inet-0020` — SKILL.md:73 *(§ Repositories)*
+### `inet-0019` — SKILL.md:73 *(§ Repositories)*
 
 > De broncode en documentatie van internet.nl staan onder de GitHub-organisatie 'internetstandards'.
 
-**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** Internet.nl GitHub organisatie
+**Type:** factual_assertion  ·  **Modaliteit:** STATEMENT  ·  **Scope:** internet.nl repositories
 
 - **SUPPORTED** (high) — [https://github.com/internetstandards/Internet.nl](https://github.com/internetstandards/Internet.nl)
   > internetstandards / Internet.nl Public
-  - *De repository URL en header tonen duidelijk dat de code staat onder de GitHub-organisatie 'internetstandards'.*
+  - *De repository staat expliciet onder de GitHub-organisatie 'internetstandards', zichtbaar in de repository-header 'internetstandards/Internet.nl'.*
 - **SUPPORTED** (high) — [https://github.com/internetstandards/Internet.nl-API-docs](https://github.com/internetstandards/Internet.nl-API-docs)
   > internetstandards / Internet.nl-API-docs Public
-  - *De brontekst toont duidelijk dat de repository onder de GitHub-organisatie 'internetstandards' staat: 'internetstandards / Internet.nl-API-docs'.*
+  - *De repository staat expliciet onder de GitHub-organisatie 'internetstandards', wat de claim bevestigt dat broncode en documentatie onder die organisatie staan.*
 - **SUPPORTED** (high) — [https://github.com/internetstandards/toolbox-wiki](https://github.com/internetstandards/toolbox-wiki)
   > internetstandards / toolbox-wiki Public
-  - *De repository staat expliciet onder de GitHub-organisatie 'internetstandards', zoals zichtbaar in de repository-naam en navigatie.*
+  - *De repository staat zichtbaar onder de GitHub-organisatie 'internetstandards', wat de claim bevestigt.*
 
 </details>
