@@ -170,7 +170,8 @@ SSLStaplingCache shmcb:/var/run/ocsp(128000)
 ### 4. HSTS
 
 **Wat:** HTTP Strict Transport Security dwingt browsers om alleen HTTPS te gebruiken
-via een response header.
+via een response header. Samen met de HTTPS-redirect hierboven vormt dit de
+Forum-standaard [HTTPS en HSTS](https://www.forumstandaardisatie.nl/open-standaarden/https-en-hsts).
 
 **Wat test internet.nl:**
 - `Strict-Transport-Security` header aanwezig
