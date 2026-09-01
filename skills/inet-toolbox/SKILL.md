@@ -115,6 +115,10 @@ dig @9.9.9.9 example.nl +dnssec
 
 #### Let's Encrypt certificaat verkrijgen
 
+Certbot gebruikt [ACME](https://www.forumstandaardisatie.nl/open-standaarden/acme)
+(RFC 8555), de Forum-standaard voor geautomatiseerde certificaatuitgifte. Elke
+ACME-client volstaat; certbot is de meest gebruikte.
+
 ```bash
 # Certbot installeren (Ubuntu/Debian)
 apt install certbot
