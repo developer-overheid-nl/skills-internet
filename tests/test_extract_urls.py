@@ -84,6 +84,13 @@ class TestNormalizeGithubUrl:
             == "https://github.com/internetstandards/Internet.nl"
         )
 
+    def test_pull_request_verwijderd(self):
+        """Een link naar een PR wijst naar de repo, niet naar een aparte bron."""
+        assert (
+            normalize_github_url("https://github.com/internetstandards/Internet.nl/pull/65")
+            == "https://github.com/internetstandards/Internet.nl"
+        )
+
     def test_tree_main_verwijderd(self):
         assert (
             normalize_github_url("https://github.com/internetstandards/Internet.nl/tree/main")
