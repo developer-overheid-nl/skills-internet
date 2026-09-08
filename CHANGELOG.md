@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.8](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.7...v0.2.8) (2026-09-08)
+
+
+### Opgelost
+
+* normaliseer /pull/N-links naar de repo in extract_urls ([#254](https://github.com/developer-overheid-nl/skills-internet/issues/254)) ([d9eefc4](https://github.com/developer-overheid-nl/skills-internet/commit/d9eefc4b06094c56035c7cc218733e142bd09357))
+
 ## [0.2.7](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.6...v0.2.7) (2026-05-17)
 
 
