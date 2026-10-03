@@ -1,7 +1,6 @@
 ---
 name: inet-mail
 description: "Mailstandaarden van internet.nl: SPF, DKIM, DMARC, STARTTLS, DANE. Anti-spoofing, mailserver-beveiliging, e-mailbeveiliging."
-model: sonnet
 allowed-tools:
   - Bash(gh api *)
   - Bash(curl -s *)
@@ -285,4 +284,3 @@ dig MX example.nl +dnssec +short
 
 Zie [reference.md](./reference.md) voor server-specifieke configuratie (Postfix, Exchange),
 key rotation-procedures en DMARC-rapportage-analyse.
-

@@ -1,7 +1,6 @@
 ---
 name: inet-api
 description: "Internet.nl batch API voor geautomatiseerd testen van meerdere domeinen: authenticatie, polling, JSON-resultaten, dashboard-integratie, bulk scans."
-model: sonnet
 allowed-tools:
   - Bash(gh api *)
   - Bash(curl -s *)
@@ -396,4 +395,3 @@ regelmatig te scannen en trends bij te houden.
 
 Zie [reference.md](./reference.md) voor gedetailleerde API-response schema's,
 rate limits en foutcodes.
-

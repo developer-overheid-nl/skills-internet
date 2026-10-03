@@ -1,7 +1,6 @@
 ---
 name: inet-toolbox
 description: "Implementatiegidsen uit de internet.nl toolbox-wiki: DNSSEC, HTTPS/TLS, DMARC, DKIM, SPF, DANE, IPv6 op BIND, NSD, Nginx, Apache, Postfix. Let's Encrypt."
-model: sonnet
 allowed-tools:
   - Bash(gh api *)
   - Bash(curl -s *)
@@ -404,4 +403,3 @@ ping6 example.nl
 
 Zie [reference.md](./reference.md) voor links naar specifieke toolbox-wiki pagina's
 en geavanceerde configuraties.
-
