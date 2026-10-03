@@ -1,7 +1,6 @@
 ---
 name: inet
 description: "Internetstandaarden getest door internet.nl. Routeert naar sub-skills voor web, mail, API en toolbox. Forum Standaardisatie pas-toe-of-leg-uit."
-model: sonnet
 allowed-tools:
   - Bash(gh api *)
   - Bash(curl -s *)
@@ -121,4 +120,3 @@ gh api repos/internetstandards/Internet.nl-API-docs/git/trees/main?recursive=1 \
 - [internet.nl/test-mail](https://internet.nl/test-mail/) - E-mail testen
 - [Forum Standaardisatie - Open standaarden](https://www.forumstandaardisatie.nl/open-standaarden)
 - [NCSC - Cybersecurity thema's](https://www.ncsc.nl/cybersecurity-themas)
-

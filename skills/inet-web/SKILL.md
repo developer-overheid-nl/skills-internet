@@ -1,7 +1,6 @@
 ---
 name: inet-web
 description: "Webstandaarden van internet.nl: HTTPS, TLS 1.2/1.3, HSTS, DNSSEC, IPv6 dual-stack, RPKI, security headers (CSP), security.txt (RFC 9116)."
-model: sonnet
 allowed-tools:
   - Bash(gh api *)
   - Bash(curl -s *)
@@ -311,4 +310,3 @@ curl -s "https://stat.ripe.net/data/rpki-validation/data.json?resource=${ip}" | 
 
 Zie [reference.md](./reference.md) voor uitgebreide protocol-details, server-specifieke
 configuraties en verwijzingen naar NCSC-factsheets.
-
