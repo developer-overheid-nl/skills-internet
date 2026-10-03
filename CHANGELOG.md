@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.9](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.8...v0.2.9) (2026-10-03)
+
+
+### Opgelost
+
+* skills respecteren het model van de gebruiker ([#277](https://github.com/developer-overheid-nl/skills-internet/issues/277)) ([84928ab](https://github.com/developer-overheid-nl/skills-internet/commit/84928abe78ca54afecaa00b2718ad5c201e60897))
+
 ## [0.2.8](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.7...v0.2.8) (2026-09-08)
 
 
