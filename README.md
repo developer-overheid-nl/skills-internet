@@ -12,7 +12,7 @@
 ```bash
 # Via de overheid-plugins marketplace (aanbevolen)
 claude plugin marketplace add developer-overheid-nl/skills-marketplace
-claude plugin install internet-nl@overheid-plugins
+claude plugin install internet@overheid-plugins
 
 # Per sessie
 git clone https://github.com/developer-overheid-nl/skills-internet.git
