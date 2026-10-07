@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.10](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.9...v0.2.10) (2026-10-07)
+
+
+### Opgelost
+
+* corrigeer de plugin-naam in het installatiecommando ([#280](https://github.com/developer-overheid-nl/skills-internet/issues/280)) ([397307d](https://github.com/developer-overheid-nl/skills-internet/commit/397307d8877cc88f5a256eb2204a81054d1ed71a))
+
 ## [0.2.9](https://github.com/developer-overheid-nl/skills-internet/compare/v0.2.8...v0.2.9) (2026-10-03)
 
 
